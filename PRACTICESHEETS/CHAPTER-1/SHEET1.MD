@@ -714,3 +714,26 @@ FROM employees;
 ```
 
 ---
+<!-- comment section  -->
+
+
+## ✅ YOUR PRACTICE CHALLENGE FOR COMMENT 
+
+Write commented versions of these queries:
+
+### Challenge 1:
+```sql
+SELECT DISTINCT city FROM employees;
+```
+
+### Challenge 2:
+```sql
+SELECT emp_name, salary, salary * 1.15 FROM employees;
+```
+
+### Challenge 3:
+```sql
+SELECT emp_name AS "Name", salary AS "Salary" FROM employees;
+```
+
+---

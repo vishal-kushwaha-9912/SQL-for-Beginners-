@@ -1,4 +1,5 @@
-# 🎯 SQL Phase 1: Core Foundations - 
+# 🎯 SQL Phase 1: Core Foundations -
+
 ## With Hands-On Learning, Visual Guides & Practice Exercises
 
 ---
@@ -271,6 +272,7 @@ Returns only Name and Age
 This diagram shows you step-by-step how SQL SELECT picks columns from a table.
 
 **Key Concepts:**
+
 - Table on the left has all columns
 - SELECT picks only the columns you need
 - Result shows only selected columns
@@ -1153,8 +1155,8 @@ FROM table_name;
 
 | customer_id | first_name | last_name | email |
 |-------------|------------|-----------|------------------|
-| 101 | John | Doe | john@gmail.com |
-| 102 | Sarah | Smith | sarah@gmail.com |
+| 101 | John | Doe | <john@gmail.com> |
+| 102 | Sarah | Smith | <sarah@gmail.com> |
 
 ---
 
@@ -1275,6 +1277,7 @@ first_name
       ▼
  First Name
 ```
+
 ---
 
 # 📝 Summary
@@ -1287,12 +1290,761 @@ first_name
 > 💡 **Remember:** `AS` is used to give a column a **temporary, user-friendly name** in the query result. It **does not** change the actual column name in the database.
 
 ---
+
+# 💬 SQL COMMENTS - Complete Guide
+
+## What Are Comments in SQL?
+
+**Comments** are notes you write in your SQL code that SQL **ignores**.
+
+They are **NOT executed** by SQL. They are only for **you** (and other programmers) to understand what the code does.
+
+Think of comments like **sticky notes** on your code.
+
+---
+
+## 📖 Simple Definition
+
+> **Comments are explanatory text in SQL code that help you (and others) understand what the code does. SQL completely ignores them.**
+
+---
+
+## 💡 Why Use Comments?
+
+- ✅ **Remember what code does** - You might forget after 1 month!
+- ✅ **Help other programmers** - They understand your code faster
+- ✅ **Document important details** - Why you wrote something a certain way
+- ✅ **Make code cleaner** - Easier to read and maintain
+- ✅ **Debug faster** - Easy to see what each part does
+
+---
+
+## 📌 Two Types of Comments in SQL
+
+### Type 1: Single-Line Comments
+
+**Syntax:**
+
+```sql
+-- This is a comment
+```
+
+The comment starts with `--` (two hyphens) and goes until the end of that line.
+
+### Type 2: Multi-Line Comments
+
+**Syntax:**
+
+```sql
+/* This is a comment
+   that can span
+   multiple lines */
+```
+
+The comment starts with `/*` and ends with `*/`
+
+---
+
+## 📝 EXAMPLE 1: Single-Line Comments
+
+```sql
+-- This query shows all employee names
+SELECT emp_name FROM employees;
+```
+
+**Explanation:**
+
+- `-- This query shows all employee names` is a comment
+- SQL ignores this line completely
+- Only the `SELECT` statement runs
+
+**Output:**
+
+```
+emp_name
+Rahul
+Priya
+Aman
+```
+
+---
+
+## 📝 EXAMPLE 2: Comments at End of Line
+
+You can put a comment at the **end** of a SQL line:
+
+```sql
+SELECT emp_name FROM employees;  -- Shows all employee names
+```
+
+**Explanation:**
+
+- `SELECT emp_name FROM employees;` is the actual query
+- `-- Shows all employee names` is the comment at the end
+- Both are on the same line, but SQL only executes the query part
+
+---
+
+## 📝 EXAMPLE 3: Multi-Line Comments
+
+```sql
+/* This query retrieves all employee information
+   from the employees table.
+   Use this when you need a complete overview
+   of all employees. */
+SELECT * FROM employees;
+```
+
+**Explanation:**
+
+- Everything between `/*` and `*/` is a comment
+- Can span multiple lines
+- SQL ignores all of it
+- Only `SELECT * FROM employees;` runs
+
+---
+
+## 📝 EXAMPLE 4: Comments for Complex Queries
+
+```sql
+/* Get employee names and salaries
+   Calculate 15% raise for budget planning */
+SELECT 
+  emp_name,           -- Employee name
+  salary,             -- Current salary
+  salary * 1.15       -- Salary after 15% raise
+FROM employees;
+```
+
+**Explanation:**
+
+- First comment explains what the whole query does
+- Individual comments explain each column
+- SQL only executes: `SELECT emp_name, salary, salary * 1.15 FROM employees;`
+
+**Output:**
+
+```
+emp_name | salary | salary * 1.15
+Rahul    | 50000  | 57500
+Priya    | 60000  | 69000
+Aman     | 45000  | 51750
+```
+
+---
+
+## 📝 EXAMPLE 5: Comments for Practice
+
+Here's a commented practice query:
+
+```sql
+-- Task: Show employees from Delhi with high salaries
+-- Get only names and salaries
+SELECT 
+  emp_name,         -- Column 1: Employee name
+  salary            -- Column 2: Current salary
+FROM employees;     -- From employees table
+```
+
+**What you learn:** Each part has a comment explaining it
+
+---
+
+## 🎯 WHEN TO USE COMMENTS
+
+### ✅ Use Comments For
+
+1. **Explaining what the query does:**
+
+```sql
+-- Find all unique cities where employees live
+SELECT DISTINCT city FROM employees;
+```
+
+1. **Explaining why you did something:**
+
+```sql
+-- We multiply by 0.10 because employees get 10% bonus
+SELECT emp_name, salary * 0.10 AS bonus FROM employees;
+```
+
+1. **Complex calculations:**
+
+```sql
+SELECT 
+  emp_name,
+  salary,
+  (salary + 5000) * 1.15  -- Add 5000 raise, then 15% bonus
+FROM employees;
+```
+
+1. **Important notes:**
+
+```sql
+-- NOTE: This includes part-time employees
+-- Need to filter them later
+SELECT * FROM employees;
+```
+
+1. **TODO reminders:**
+
+```sql
+-- TODO: Need to add WHERE clause to filter by department
+SELECT * FROM employees;
+```
+
+---
+
+## ❌ WHEN NOT TO USE Comments
+
+### Don't over-comment obvious things
+
+**Bad (Too much comment):**
+
+```sql
+-- Get emp_name
+SELECT emp_name FROM employees;
+```
+
+**Better (Self-explanatory):**
+
+```sql
+SELECT emp_name FROM employees;
+```
+
+---
+
+## 📝 EXAMPLE 6: Real-World Example
+
+Here's a realistic commented query:
+
+```sql
+/* Sales Analysis Query
+   Purpose: Calculate monthly revenue and bonuses
+   Created: July 2024
+   Author: Data Team */
+
+SELECT 
+  emp_name AS "Employee Name",        -- Employee full name
+  salary AS "Annual Salary",          -- Current annual salary
+  (salary / 12) AS "Monthly Salary",  -- Divide by 12 for monthly
+  salary * 0.10 AS "Bonus (10%)"      -- 10% performance bonus
+FROM employees;
+-- Result: Shows salary breakdown and bonus for budget planning
+```
+
+**What this teaches:**
+
+- Header comment with metadata
+- Comments explaining each column
+- Footer comment explaining the purpose
+
+---
+
+## 📝 EXAMPLE 7: Comments with DISTINCT
+
+```sql
+-- Get all unique cities
+-- This helps the marketing team target regions
+SELECT DISTINCT city FROM employees;
+```
+
+**Output:**
+
+```
+city
+Delhi
+Mumbai
+Bangalore
+Pune
+```
+
+---
+
+## 📝 EXAMPLE 8: Comments with Calculations
+
+```sql
+-- Calculate salary increase scenarios
+SELECT 
+  emp_name,
+  salary,
+  salary * 1.10 AS "10% Raise",   -- 10% salary increase
+  salary * 1.15 AS "15% Raise",   -- 15% salary increase
+  salary * 1.20 AS "20% Raise"    -- 20% salary increase
+FROM employees;
+```
+
+**Output:**
+
+```
+emp_name | salary | 10% Raise | 15% Raise | 20% Raise
+Rahul    | 50000  | 55000     | 57500     | 60000
+Priya    | 60000  | 66000     | 69000     | 72000
+```
+
+---
+
+## 💬 COMMENT STYLES
+
+### Style 1: Header Comments (For whole query)
+
+```sql
+-- Purpose: Show all employees
+-- Filter: None
+-- Created: July 2024
+
+SELECT * FROM employees;
+```
+
+### Style 2: Inline Comments (For each line)
+
+```sql
+SELECT 
+  emp_name,     -- Name of employee
+  salary,       -- Current salary
+  department    -- Department assigned
+FROM employees;
+```
+
+### Style 3: Multi-Line Comments (For complex sections)
+
+```sql
+/* This section calculates salary projections
+   for the next 5 years based on 5% annual increase */
+SELECT emp_name, salary FROM employees;
+```
+
+### Style 4: Mixed Style (Best practice)
+
+```sql
+-- Query: Employee Salary Report
+-- Purpose: Annual salary review
+
+SELECT 
+  emp_name,           -- Employee name
+  salary,             -- Current salary
+  salary * 1.05       -- After 5% raise
+FROM employees;
+
+-- Note: Excludes contract employees
+```
+
+---
+
+## 🎯 COMMENTING BEST PRACTICES
+
+### ✅ DO
+
+1. **Comment the WHY, not the WHAT:**
+
+   ```sql
+   -- Good: Explains why
+   -- Multiply by 0.10 because company policy is 10% bonus
+   SELECT salary * 0.10 FROM employees;
+   
+   -- Bad: Explains what (obvious)
+   -- Multiply salary by 0.10
+   SELECT salary * 0.10 FROM employees;
+   ```
+
+2. **Keep comments short:**
+
+   ```sql
+   -- Get unique departments
+   SELECT DISTINCT department FROM employees;
+   ```
+
+3. **Use comments to explain complex logic:**
+
+   ```sql
+   -- PEMDAS: Calculate (salary + bonus) * tax rate
+   SELECT (salary + 5000) * 0.15 FROM employees;
+   ```
+
+### ❌ DON'T
+
+1. **Don't comment obvious code:**
+
+   ```sql
+   -- Bad: Obvious
+   SELECT * FROM employees;  -- Select all from employees
+   ```
+
+2. **Don't leave outdated comments:**
+
+   ```sql
+   -- Bad: Outdated
+   -- Old version: used to filter by age
+   SELECT * FROM employees;
+   ```
+
+3. **Don't write novels:**
+
+   ```sql
+   -- Bad: Too long
+   /* This query was written because the manager
+      asked for a list of all employees and their
+      salaries on a Tuesday morning when... */
+   SELECT * FROM employees;
+   ```
+
+---
+
+## ✋ PRACTICE: Add Comments to These Queries
+
+### Task 1: Add a comment explaining this query
+
+```sql
+SELECT emp_name, salary FROM employees;
+```
+
+**Solution:**
+
+```sql
+-- Show employee names and salaries for review
+SELECT emp_name, salary FROM employees;
+```
+
+---
+
+### Task 2: Add comments to each column
+
+```sql
+SELECT emp_name, age, salary FROM employees;
+```
+
+**Solution:**
+
+```sql
+SELECT 
+  emp_name,   -- Full name of employee
+  age,        -- Current age
+  salary      -- Annual salary
+FROM employees;
+```
+
+---
+
+### Task 3: Comment a complex calculation
+
+```sql
+SELECT salary * 1.15 FROM employees;
+```
+
+**Solution:**
+
+```sql
+-- Calculate salary after 15% raise (budget planning)
+SELECT salary * 1.15 FROM employees;
+```
+
+---
+
+### Task 4: Comment the DISTINCT query
+
+```sql
+SELECT DISTINCT city FROM employees;
+```
+
+**Solution:**
+
+```sql
+-- Get all unique cities (for marketing campaigns)
+SELECT DISTINCT city FROM employees;
+```
+
+---
+
+### Task 5: Full commented query
+
+```sql
+SELECT 
+  emp_name,
+  salary,
+  salary * 0.10 AS bonus
+FROM employees;
+```
+
+**Solution:**
+
+```sql
+-- Calculate employee bonuses for annual review
+SELECT 
+  emp_name,         -- Employee full name
+  salary,           -- Current salary
+  salary * 0.10 AS "Bonus (10%)"  -- 10% of salary
+FROM employees;
+```
+
+---
+
+## 🚨 COMMON MISTAKES WITH COMMENTS
+
+### ❌ Mistake 1: Forgetting to close multi-line comment
+
+**Wrong:**
+
+```sql
+/* This is a comment
+SELECT * FROM employees;  -- This is NOT commented!
+*/
+```
+
+The SELECT query actually runs!
+
+**Right:**
+
+```sql
+/* This is a comment
+   that spans multiple lines */
+SELECT * FROM employees;
+```
+
+---
+
+### ❌ Mistake 2: Using wrong comment syntax
+
+**Wrong (trying to use Python style):**
+
+```sql
+# This is a comment (doesn't work in SQL)
+SELECT * FROM employees;
+```
+
+**Right (SQL style):**
+
+```sql
+-- This is a comment
+SELECT * FROM employees;
+```
+
+---
+
+### ❌ Mistake 3: Over-commenting
+
+**Wrong:**
+
+```sql
+-- Get name from employees table
+-- The SELECT keyword retrieves data
+-- The * symbol means all columns
+-- The FROM keyword specifies the table
+-- The ; ends the query
+SELECT * FROM employees;
+```
+
+**Right:**
+
+```sql
+-- Get all employee data
+SELECT * FROM employees;
+```
+
+---
+
+## 💡 REAL-WORLD EXAMPLES
+
+### Example 1: HR Report
+
+```sql
+/* HR Department Report
+   Shows: Employee names, salaries, and calculated bonuses
+   Used for: Annual salary review and budget planning
+   Last Updated: July 2024 */
+
+SELECT 
+  emp_name AS "Employee",         -- Full name
+  salary AS "Salary",             -- Annual salary
+  salary * 0.10 AS "Bonus (10%)"  -- Performance bonus
+FROM employees;
+```
+
+---
+
+### Example 2: Finance Analysis
+
+```sql
+-- Monthly budget projection
+-- Calculate: (Current Salary + 5000 raise) / 12 months
+SELECT 
+  emp_name,                    -- Employee name
+  (salary + 5000) / 12         -- Monthly cost after raise
+FROM employees;
+
+-- Note: Includes all departments
+```
+
+---
+
+### Example 3: Marketing Data
+
+```sql
+/* Marketing Team: Location Analysis
+   Purpose: Identify unique cities for regional campaigns */
+
+SELECT DISTINCT city AS "Target Cities"  -- One city per row
+FROM employees;
+
+-- Results will be used for regional marketing strategy
+```
+
+---
+
+## 📊 WHEN COMMENTS ARE MOST HELPFUL
+
+### Scenario 1: Complex Calculation
+
+```sql
+-- Calculate compound interest (5% annual, 3 years)
+-- Formula: salary * (1.05 ^ 3)
+SELECT 
+  emp_name,
+  salary * 1.1576  -- Result of 1.05 * 1.05 * 1.05
+FROM employees;
+```
+
+### Scenario 2: Business Logic
+
+```sql
+-- Filter excludes contractors (department != 'Contract')
+-- Includes only permanent employees for benefits calculation
+SELECT * FROM employees;
+```
+
+### Scenario 3: Data Quality Notes
+
+```sql
+-- Note: Some rows have NULL emails
+-- Need to investigate before sending communications
+SELECT emp_name, email FROM employees;
+```
+
+---
+
+## 🎯 KEY POINTS TO REMEMBER
+
+✅ **Comments start with `--` for single line**
+
+```sql
+-- This is a comment
+```
+
+✅ **Comments use `/* */` for multiple lines**
+
+```sql
+/* This is a
+   multi-line comment */
+```
+
+✅ **SQL completely ignores comments**
+
+```sql
+SELECT * FROM employees;  -- Only this runs
+```
+
+✅ **Comments help explain WHY, not WHAT**
+
+```sql
+-- Good: Explains business reason
+SELECT salary * 0.10 FROM employees;
+```
+
+✅ **Use comments for complex logic**
+
+```sql
+-- PEMDAS: Calculate (salary + 5000) * 1.15
+SELECT (salary + 5000) * 1.15 FROM employees;
+```
+
+---
+
+## 📝 COMMENT TEMPLATE FOR YOUR QUERIES
+
+Use this template when writing SQL:
+
+```sql
+/* ============================================
+   QUERY TITLE
+   Purpose: [What this query does]
+   Created: [Date]
+   Author: [Your name]
+   ============================================ */
+
+SELECT 
+  column1,      -- Description
+  column2,      -- Description
+  calculation   -- Calculation explanation
+FROM table_name;
+
+-- Additional notes (if needed)
+```
+
+---
+
+## 🎓 SUMMARY: SQL COMMENTS
+
+| Concept | Details |
+|---------|---------|
+| **Purpose** | Explain code to humans (ignored by SQL) |
+| **Single-Line** | `-- comment text` |
+| **Multi-Line** | `/* comment text */` |
+| **When to use** | Complex logic, business rules, important notes |
+| **Best practice** | Explain WHY, not WHAT |
+| **Keep it** | Short, clear, relevant |
+
+---
+
+## 🎉 YOU NOW KNOW COMMENTS
+
+After this section, you understand:
+
+✅ What comments are  
+✅ Two types of comments (single & multi-line)  
+✅ When to use comments  
+✅ Comment best practices  
+✅ Real-world examples  
+✅ Common mistakes  
+✅ How to comment your own queries  
+
+---
+
+## 🚀 NEXT STEPS
+
+1. **Use comments in all your queries** - They help you remember!
+2. **Comment for others** - Imagine someone else reading your code
+3. **Keep comments updated** - Remove outdated ones
+4. **Comment complex logic** - Help future you understand
+
+---
+
+## 💬 FINAL REMINDER
+
+> **Comments are YOUR notes to yourself and others. SQL ignores them completely. Use them to explain the logic, not the syntax!**
+
+---
+
+**Congratulations! You've completed Phase 1 of SQL, including comments! 🎉**
+
+You now understand:
+
+- ✅ SELECT statements
+- ✅ DISTINCT
+- ✅ AS (Column Aliases)
+- ✅ Calculations & PEMDAS
+- ✅ COMMENTS
+
+**Ready for Phase 2? Let's learn WHERE clauses next! 🚀**
+
+---
+
 # PRACTICE SHEET 👇👇
+
 ```
 
 👉  PRACTICESHEETS\CHAPTER-1\SHEET1.MD
 
 ```
+
 # 🎯 KEY CONCEPTS SUMMARY
 
 ## What You've Learned in Phase 1
@@ -1311,7 +2063,7 @@ first_name
 
 ---
 
-## 💡 Remember These Key Points:
+## 💡 Remember These Key Points
 
 1. ✅ **SELECT picks columns** - Use SELECT to choose what data you want
 2. ✅ **FROM specifies table** - Tell SQL which table to read
@@ -1335,6 +2087,7 @@ Once you've mastered these concepts and completed the practice exercises:
 - You understand PEMDAS and order of operations
 
 **Next Phase Topics:**
+
 - WHERE clause (filtering data)
 - Comparison operators (=, >, <, etc.)
 - Logical operators (AND, OR, NOT)
@@ -1372,12 +2125,12 @@ This section contains practical exercises you can try on your own using a SQL pl
 Before you start, you need a SQL environment. Choose one:
 
 1. **SQLite Online** (No installation needed)
-   - Go to: https://sqliteonline.com
+   - Go to: <https://sqliteonline.com>
    - Click "Create" → Select "SQLite"
    - Ready to use!
 
 2. **W3Schools SQL Tutorial** (Interactive)
-   - Go to: https://www.w3schools.com/sql/
+   - Go to: <https://www.w3schools.com/sql/>
    - Has built-in editor to test queries
 
 3. **Your Local Computer** (If you have SQL installed)
