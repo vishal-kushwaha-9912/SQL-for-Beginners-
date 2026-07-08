@@ -16,5 +16,5 @@ INSERT INTO employees VALUES
 (104, 'Neha', 35, 70000, 'Finance', 'Bangalore', 'neha@company.com'),
 (105, 'Rohan', 29, 55000, 'IT', 'Pune', 'rohan@company.com'),
 (106, 'Simran', 27, 48000, 'HR', 'Delhi', 'simran@company.com'),
-(107, 'Vishal', 31, 65000, 'Finance', 'Mumbai', 'vikram@company.com'),
+(107, 'Vikram', 31, 65000, 'Finance', 'Mumbai', 'vikram@company.com'),
 (108, 'Anaya', 26, 52000, 'IT', 'Bangalore', NULL);

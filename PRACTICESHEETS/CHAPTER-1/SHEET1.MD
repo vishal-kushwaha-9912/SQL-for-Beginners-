@@ -519,20 +519,19 @@ FROM → Which table?
 
 ## 🏆 Challenge 5: Monthly Budget Calculation
 
-**Scenario:** You need to calculate total monthly salary cost (all employees, monthly)
+**Scenario:** You need to calculate total annual salary cost (all employees, monthly)
 
 **Your Task:**
 ```sql
 -- Show:
 -- - Employee name
--- - Monthly salary (annual ÷ 12)
+-- - Annual salary ( monthly* 12)
 -- Your query here:
 ```
 
 **Expected Result:** Employee names with monthly salary
 
 **Difficulty:** ⭐⭐ Easy
-
 ---
 
 ---
