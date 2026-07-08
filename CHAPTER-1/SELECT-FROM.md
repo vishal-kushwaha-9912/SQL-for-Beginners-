@@ -183,7 +183,7 @@ Just like we use **English** to talk to people, we use **SQL** to talk to databa
 
 ---
 
----
+
 
 # 📌 Part 1: SELECT Statement
 
@@ -280,6 +280,7 @@ This diagram shows you step-by-step how SQL SELECT picks columns from a table.
 **Click on any part of the diagram to learn more!**
 
 ---
+
 <img src="../images/select-diagram.png" width="1000">
 ---
 
@@ -590,7 +591,7 @@ That's exactly how SQL processes every `SELECT` query.
 
 > 💡 **Remember:** Ask SQL only for the data you need. It makes your queries faster, cleaner, and easier to understand.
 
----
+
 
 ---
 
@@ -681,6 +682,7 @@ Step 2:
 **Result:** `50`
 
 ---
+
 <img src="../IMAGES/pemdas_calculations_guide.png" width="1000">
 ## 💡 Why is PEMDAS Important?
 
@@ -908,7 +910,7 @@ SQL works exactly the same way.
 
 ---
 
----
+
 
 # 🔹 DISTINCT in SQL
 
@@ -1060,6 +1062,7 @@ In this case, SQL removes **duplicate combinations** of **City** and **Name**.
 
 ---
 <img src="../IMAGES/distinct_visual_guide.png" width="700">
+
 # 🎯 Real-World Example
 
 Imagine a shopping website.
