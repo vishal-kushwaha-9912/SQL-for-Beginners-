@@ -207,6 +207,8 @@ Priya       70,000  ← Highest
 
 ### Visual Representation
 
+<img src="../IMAGES/SHEET3/order_by_visual_guide.png" width="600">
+
 ```
 DESC Direction (Going DOWN in value):
 

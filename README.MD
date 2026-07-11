@@ -48,7 +48,7 @@ SQL Learning Path
 │       ├── Practice Exercises (10)
 │       └── Challenge Problems (7)
 │
-├── CHAPTER-3/ ⏳ (Coming Soon)
+├── CHAPTER-3/ ✅ COMPLETE
 │   └── ORDER-BY.md
 │
 ├── CHAPTER-4/ ⏳ (Coming Soon)
