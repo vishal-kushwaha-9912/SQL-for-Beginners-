@@ -250,7 +250,7 @@ Learn how to **organize and sort your data** in meaningful ways using ORDER BY c
 
 **📈 Statistics for Chapter 3**
 - Theory Content: ~2000-2500 lines
-- Practice Exercises: 15
+- Practice Exercises: 50
 - Challenge Problems: 7
 - Real-World Scenarios: 2-3
 - Common Mistakes Covered: 5+

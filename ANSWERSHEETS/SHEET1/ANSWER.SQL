@@ -7,9 +7,8 @@
 -- ```sql
 -- -- Write your query here:
 
---  SELECT * FROM employees;
+ SELECT * FROM employees;
 
--- ```
 
 -- **Expected Output:**
 -- ```
@@ -20,16 +19,16 @@
 -- ```
 
 
--- ---
 
--- ### 🎯 Task 1.2: Select Specific Columns
+
+-- . 🎯 Task 1.2: Select Specific Columns
 -- **Objective:** Show only employee names and salaries
 
 -- ```sql
 -- -- Write your query here:
--- SELECT emp_name , salary 
--- FROM employees;
--- -- ```
+SELECT emp_name , salary 
+FROM employees;
+-- ```
 
 -- **💡 Hint:** You need 2 columns - emp_name and salary
 
@@ -45,17 +44,17 @@
 
 -- ---
 
--- ### 🎯 Task 1.3: Select Multiple Columns
+-- . 🎯 Task 1.3: Select Multiple Columns
 -- **Objective:** Show employee names, departments, and cities
 
--- ```sql
+
 -- -- Write your query here:
 
--- SELECT emp_name ,department , city
+SELECT emp_name ,department , city
 
--- FROM employees;
+FROM employees;
 
--- ```
+
 
 -- **💡 Hint:** 3 columns from employees table
 
@@ -79,7 +78,7 @@
 -- ```sql
 -- -- Write your query here
 
--- SELECT DISTINCT department FROM employees;
+SELECT DISTINCT department FROM employees;
 
 
 -- ```
@@ -98,14 +97,14 @@
 
 -- ---
 
--- ### 🎯 Task 2.2: Find Unique Cities
+-- . 🎯 Task 2.2: Find Unique Cities
 -- **Objective:** Show all cities where company has employees (no repeats)
 
 -- ```sql
 -- -- Write your query here:
 --
 
--- SELECT DISTINCT city  FROM employees;
+SELECT DISTINCT city  FROM employees;
 
 
 
@@ -130,11 +129,11 @@
 -- **Objective:** Display employee names as "Employee Name" and salary as "Annual Salary"
 
 -- ```sql
--- -- Write your query here:
--- -- 
--- SELECT emp_name "Employee Name" , 
---         salary "Annual Salary"
--- FROM employees;
+--  Write your query here:
+
+SELECT emp_name "Employee Name" , 
+        salary "Annual Salary"
+FROM employees;
 
 
 -- ```
@@ -157,12 +156,12 @@
 -- **Objective:** Show salary and calculated bonus (10% of salary) with friendly names
 
 -- ```sql
--- -- Write your query here:
+--  Write your query here:
 
--- SELECT emp_name "NAME" , 
---  salary "CURRENT SALARY" ,
---  (salary*0.10) "BONUS 10%"
--- FROM employees;
+SELECT emp_name "NAME" , 
+ salary "CURRENT SALARY" ,
+ (salary*0.10) "BONUS 10%"
+FROM employees;
 
 
 -- ```
@@ -179,18 +178,18 @@
 
 -- ---
 
--- ## ✋ Exercise 4: Mathematical Calculations
+-- . ✋ Exercise 4: Mathematical Calculations
 
--- ### 🎯 Task 4.1: Calculate Monthly Salary
+-- . 🎯 Task 4.1: Calculate Monthly Salary
 -- **Objective:** Show employee name and monthly salary (annual * 12)
 
 -- ```sql
 -- -- Write your query here:
 
--- SELECT emp_name "NAME" ,
--- salary"MONTHLY SALARY" ,
--- salary*12"ANNUAL INCOME"
---  FROM employees;
+SELECT emp_name "NAME" ,
+salary"MONTHLY SALARY" ,
+salary*12"ANNUAL INCOME"
+ FROM employees;
 
 
 
@@ -208,14 +207,14 @@
 
 -- ---
 
--- ### 🎯 Task 4.2: Calculate Salary After Raise
+--  🎯 Task 4.2: Calculate Salary After Raise
 -- **Objective:** Show employee name and salary after 5000 raise
 
 -- ```sql
 -- -- Write your query here
 
--- SELECT emp_name "NAME",salary ,salary+5000"BOUNS"
--- FROM employees;
+SELECT emp_name "NAME",salary ,salary+5000"BOUNS"
+FROM employees;
 
 
 

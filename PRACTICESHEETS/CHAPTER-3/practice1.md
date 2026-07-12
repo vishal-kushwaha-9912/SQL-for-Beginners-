@@ -1,9 +1,9 @@
 
 # 📚 BONUS: 50 PRACTICE QUESTIONS
 
-## 🟢 Easy Level (Questions 1-15)
+. 🟢 Easy Level (Questions 1-15)
 
-### 1. Basic Sorts
+. 1. Basic Sorts
 ```sql
 -- Q1: Sort employees by name (A to Z)
 SELECT emp_name FROM employees ORDER BY _____ ASC;
@@ -21,7 +21,7 @@ SELECT city FROM employees ORDER BY city;
 SELECT emp_name, join_date FROM employees ORDER BY join_date DESC;
 ```
 
-### 6-10. Understanding ASC/DESC
+. 6-10. Understanding ASC/DESC
 ```sql
 -- Q6: Which of these is the SAME?
 -- A) ORDER BY salary ASC
@@ -44,7 +44,7 @@ SELECT _____ FROM _____ ORDER BY _____ _;
 -- B) DESC
 ```
 
-### 11-15. Finding Errors
+. 11-15. Finding Errors
 ```sql
 -- Q11: Find the error
 SELECT emp_name FROM employees
@@ -69,9 +69,9 @@ SELECT name FROM employees ORDER BY salary DESC;
 
 ---
 
-## 🟡 Medium Level (Questions 16-35)
+. 🟡 Medium Level (Questions 16-35)
 
-### 16-20. Multiple Column Sorting
+. 16-20. Multiple Column Sorting
 ```sql
 -- Q16: Sort by department, then salary (highest first)
 SELECT * FROM employees ORDER BY _____, _____ DESC;
@@ -91,7 +91,7 @@ Write the complete query:
 -- what determines their order?
 ```
 
-### 21-25. Column Positions
+. 21-25. Column Positions
 ```sql
 -- Q21: How many columns in this query?
 SELECT emp_name, salary, department, city FROM employees;
@@ -111,7 +111,7 @@ ORDER BY department, salary DESC;
 -- B) They change
 ```
 
-### 26-30. Aliases
+. 26-30. Aliases
 ```sql
 -- Q26: Create an alias for 'emp_name' as 'Employee_Name'
 SELECT emp_name _____ Employee_Name FROM employees;
@@ -132,7 +132,7 @@ ORDER BY Annual_Salary DESC;
 -- Q30: Create a meaningful alias for (salary + bonus)
 ```
 
-### 31-35. Expressions
+. 31-35. Expressions
 ```sql
 -- Q31: Sort by annual salary (multiply by 12)
 SELECT emp_name, salary FROM employees ORDER BY _________;
@@ -155,9 +155,9 @@ SELECT emp_name FROM employees ORDER BY UPPER(emp_name);
 
 ---
 
-## 🔴 Hard Level (Questions 36-50)
+. 🔴 Hard Level (Questions 36-50)
 
-### 36-40. Complex Scenarios
+. 36-40. Complex Scenarios
 ```sql
 -- Q36: Sort employees by:
 -- 1) Department (A-Z)
@@ -182,7 +182,7 @@ Write the complete query.
 -- Q40: What's the benefit of using an alias vs. a bare expression?
 ```
 
-### 41-45. Real-World Problems
+. 41-45. Real-World Problems
 ```sql
 -- Q41: E-commerce: Show products sorted by:
 -- 1) Category (alphabetically)
@@ -209,7 +209,7 @@ ORDER BY 1, Annual_Salary DESC;
 // Defend your answer.
 ```
 
-### 46-50. Synthesis & Mastery
+. 46-50. Synthesis & Mastery
 ```sql
 -- Q46: Write a query that uses:
 // - Multiple columns in ORDER BY

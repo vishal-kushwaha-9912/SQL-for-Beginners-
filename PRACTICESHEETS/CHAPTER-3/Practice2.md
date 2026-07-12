@@ -1,9 +1,9 @@
-<a name="part-9-practice-problems"></a>
+<!-- <a name="part-9-practice-problems"></a>
 # 📖 PART 9: PRACTICE PROBLEMS WITH SOLUTIONS
 
-## Sample Data Tables
+. Sample Data Tables
 
-### Employees Table
+. Employees Table
 ```
 emp_id  emp_name    department  salary   hire_date    city
 1       Rahul       IT          50,000   2020-03-15   Mumbai
@@ -16,7 +16,7 @@ emp_id  emp_name    department  salary   hire_date    city
 8       Vikram      Sales       48,000   2022-01-18   Mumbai
 ```
 
-### Products Table
+. Products Table
 ```
 product_id  product_name    category      price    rating
 101         Laptop          Electronics   50,000   4.8
@@ -27,7 +27,7 @@ product_id  product_name    category      price    rating
 106         USB Cable       Electronics   300      4.3
 ```
 
-### Orders Table
+. Orders Table
 ```
 order_id  customer_id  order_date       amount    status
 1001      101          2026-07-10       25,000    Delivered
@@ -41,9 +41,9 @@ order_id  customer_id  order_date       amount    status
 
 ---
 
-## 🟢 EASY PROBLEMS (1-4)
+. 🟢 EASY PROBLEMS (1-4)
 
-### Problem 1: Sort by Name (A-Z)
+. Problem 1: Sort by Name (A-Z)
 
 **Task:** Show all employees sorted alphabetically by name.
 
@@ -85,7 +85,7 @@ Vikram      Sales       48,000
 
 ---
 
-### Problem 2: Sort by Salary (Highest First)
+. Problem 2: Sort by Salary (Highest First)
 
 **Task:** Show employees with highest salary first.
 
@@ -127,7 +127,7 @@ Mohit       40,000    HR
 
 ---
 
-### Problem 3: Sort Products by Rating (Best First)
+. Problem 3: Sort Products by Rating (Best First)
 
 **Task:** Show products with highest rating first.
 
@@ -163,7 +163,7 @@ USB Cable       4.3     300
 
 ---
 
-### Problem 4: Sort Orders by Date (Newest First)
+. Problem 4: Sort Orders by Date (Newest First)
 
 **Task:** Show orders sorted by date, newest first.
 
@@ -200,9 +200,9 @@ order_id  order_date      amount    status
 
 ---
 
-## 🟡 MEDIUM PROBLEMS (5-8)
+. 🟡 MEDIUM PROBLEMS (5-8)
 
-### Problem 5: Sort by Department, Then Salary
+. Problem 5: Sort by Department, Then Salary
 
 **Task:** Show employees by department (A-Z), then by salary (high to low) within each dept.
 
@@ -249,7 +249,7 @@ Aman        Sales       45,000
 
 ---
 
-### Problem 6: Sort Products by Rating, Then Price
+. Problem 6: Sort Products by Rating, Then Price
 
 **Task:** Show products sorted by rating (best first), then by price (cheapest first) if ratings tie.
 
@@ -291,7 +291,7 @@ USB Cable       4.3     300
 
 ---
 
-### Problem 7: Filter and Sort Together
+. Problem 7: Filter and Sort Together
 
 **Task:** Show employees from IT department, sorted by salary (highest first).
 
@@ -337,7 +337,7 @@ WHERE department = 'IT';  ← Syntax error!
 
 ---
 
-### Problem 8: Sort by Calculation (Annual Salary)
+. Problem 8: Sort by Calculation (Annual Salary)
 
 **Task:** Show employees sorted by annual salary (salary × 12), highest first.
 
@@ -380,9 +380,9 @@ Mohit       40,000    480,000
 
 ---
 
-## 🔴 HARD PROBLEMS (9-12)
+. 🔴 HARD PROBLEMS (9-12)
 
-### Problem 9: Group and Sort (Advanced)
+. Problem 9: Group and Sort (Advanced)
 
 **Task:** Show total sales by customer, highest spender first.
 
@@ -426,7 +426,7 @@ customer_id  order_count  total_spent
 
 ---
 
-### Problem 10: Multi-Level Sort (3+ columns)
+. Problem 10: Multi-Level Sort (3+ columns)
 
 **Task:** Show employees sorted by: department (A-Z), salary (high-low), then name (A-Z).
 
@@ -469,7 +469,7 @@ Aman        Sales       45,000
 
 ---
 
-### Problem 11: Complex Calculation
+. Problem 11: Complex Calculation
 
 **Task:** Show products sorted by profit margin (price - cost), highest margin first.
 *Assume cost = price × 0.4*
@@ -519,7 +519,7 @@ USB Cable       300      180
 
 ---
 
-### Problem 12: Filter, Group, and Sort (Everything Combined!)
+. Problem 12: Filter, Group, and Sort (Everything Combined!)
 
 **Task:** Show total sales by department (IT, Sales, HR), sorted by total revenue (highest first). Only include departments with total revenue > 100,000.
 
@@ -576,4 +576,4 @@ HAVING SUM(salary) > 100000;
 
 </details>
 
----
+--- -->

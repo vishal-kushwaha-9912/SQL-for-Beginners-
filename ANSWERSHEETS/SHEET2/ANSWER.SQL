@@ -15,8 +15,8 @@
 -- ```
 
 
---  SELECT DISTINCT city 
---  FROM employees;
+ SELECT DISTINCT city 
+ FROM employees;
 
 
 
@@ -36,11 +36,11 @@
 -- ```sql
 -- -- Write a query showing:
 
--- SELECT emp_name "EMPLOYEES NAME" ,
--- department"JOB DEPARTMENT",
--- Salary "SALARY"
+SELECT emp_name "EMPLOYEES NAME" ,
+department"JOB DEPARTMENT",
+Salary "SALARY"
 
--- FROM employees;
+FROM employees;
 
 
 
@@ -62,8 +62,8 @@
 -- ```sql
 
 
--- SELECT emp_name "NAME", salary"CURRENT SALARY", (salary*0.15)+salary "15% raise "
--- FROM employees;
+SELECT emp_name "NAME", salary"CURRENT SALARY", (salary*0.15)+salary "15% raise "
+FROM employees;
 
 
 
@@ -80,7 +80,7 @@
 
 -- ---
 
--- ## 🏆 Challenge 4: Department Heads List
+-- . 🏆 Challenge 4: Department Heads List
 
 -- **Scenario:** Company wants to know all departments that have employees.
 
@@ -89,9 +89,6 @@
 SELECT emp_name"NAME",department"JOB DEPARTMENT"
 FROM employees;
 
-
-
--- ```
 
 -- **Expected Result:** List of departments with friendly heading
 
