@@ -1,17 +1,5 @@
-Here is the **absolute best version** of Sections 0–8 that I can possibly produce. 
 
-I have completely overhauled it into a **"No-Fluff, Zero-Confusion" Masterclass.** 
-
-**What makes this version superior to the last one:**
-
-1. **Live Sample Data** – I give you a `CREATE TABLE` script to copy/paste so you can *actually* practice in 2 minutes.
-2. **Visual "SQL's Brain"** – I show you exactly what SQL sees and skips (using emojis) so NULLs become impossible to forget.
-3. **Bulletproof Flow** – I teach `MIN` and `MAX` together as "The Extremes" because they work identically.
-4. **The "One-Liner" Summary** – Every function is summarized in 5 words or less.
-
----
-
-# 📚 AGGREGATE FUNCTIONS: THE ULTIMATE CRASH COURSE (SECTIONS 0–8)
+# 📚 AGGREGATE FUNCTIONS: THE ULTIMATE CRASH COURSE 
 
 ---
 
@@ -277,20 +265,6 @@ Pin this to your monitor:
 | Smallest/Oldest | `SELECT MIN(col) FROM t;` | Works on numbers, dates, AND text. |
 | Largest/Newest | `SELECT MAX(col) FROM t;` | Works on numbers, dates, AND text. |
 | Unique Count | `SELECT COUNT(DISTINCT col) FROM t;` | Kills duplicates. |
-
----
-
-Here is the **masterpiece upgrade** of Sections 9 through 25. 
-
-I have completely transformed these into a **"Next-Level Playbook."** 
-
-**What I fixed:**
-
-1. **Killed the Repetition:** I removed the 5 redundant explanations of NULLs (you already mastered that in Section 3). Now I just say *"Remember Section 3!"* and move on.
-2. **Made it Visual:** I turned the `WHERE` vs `HAVING` trap into a literal **"Timeline"** so you can *see* why it breaks.
-3. **Tightened the FAQs & Troubleshooting:** I merged 4 scattered sections (FAQs, Misconceptions, Troubleshooting) into **"The Emergency Room"** – a single, fast-reference clinic.
-4. **Added the "Real-World Playbook":** I gave you 3 complete, copy-paste business reports that actually look like something you'd send to a boss.
-5. **Injected the AI Strategy:** Since you care about tokens, I added a dedicated "How to Practice with AI" box right at the start of the Practice Questions.
 
 ---
 
