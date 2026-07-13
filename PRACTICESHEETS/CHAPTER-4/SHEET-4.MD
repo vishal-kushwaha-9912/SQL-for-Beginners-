@@ -1,526 +1,247 @@
+# 🎯 THE ULTIMATE PRACTICE QUESTION BANK
 
+##  Hand-Crafted SQL Queries (Beginner → Advanced)
 
-<a name="part-15-practice"></a>
-# 📖 PART 15: PRACTICE PROBLEMS & SOLUTIONS
-
-
-## 🟢 EASY PROBLEMS (1-5)
-
-### Problem 1: Count Employees by Department
-
-**Task:** How many employees in each department?
-
-**Write your query:**
-```sql
-[Your answer here]
-```
-
-<details>
-<summary>📝 Solution</summary>
-
-```sql
-SELECT department, COUNT(*) as emp_count
-FROM employees
-GROUP BY department;
-```
-
-**Output:**
-```
-department  emp_count
-IT          3
-HR          2
-Sales       1
-```
-
-**Explanation:** Counts rows in each department group
-
-</details>
+I have designed these questions to test **every single concept** in your Aggregates Guide—from `COUNT` and `SUM` all the way to `HAVING`, `COALESCE`, and mathematical operations on aggregates.
 
 ---
 
-### Problem 2: Total Salary by Department
+## 📦 THE DATASET (Copy & Paste This Setup)
 
-**Task:** What's the total salary expense for each department?
-
-**Write your query:**
-```sql
-[Your answer here]
-```
-
-<details>
-<summary>📝 Solution</summary>
+Run this in your SQL tool **before** attempting the questions:
 
 ```sql
-SELECT department, SUM(salary) as total_salary
-FROM employees
-GROUP BY department;
-```
+-- ========== EMPLOYEES TABLE ==========
+CREATE TABLE employees (
+    emp_id INT,
+    name VARCHAR(50),
+    department VARCHAR(20),
+    salary DECIMAL(10,2),
+    hire_date DATE
+);
 
-**Output:**
-```
-department  total_salary
-IT          165,000
-HR          95,000
-Sales       45,000
-```
+INSERT INTO employees VALUES 
+(1, 'Rahul', 'Sales', 55000, '2020-01-15'),
+(2, 'Aman', 'Sales', 48000, '2021-03-22'),
+(3, 'Neha', 'IT', NULL, '2022-06-10'),   -- <-- NULL salary!
+(4, 'Priya', 'IT', 65000, '2019-11-01'),
+(5, 'Ravi', 'HR', 42000, '2023-02-14'),
+(6, 'Mohit', 'Sales', 52000, '2020-08-30');
 
-**Explanation:** Sums all salaries in each department
+-- ========== ORDERS TABLE ==========
+CREATE TABLE orders (
+    order_id INT,
+    customer_id INT,
+    amount DECIMAL(10,2),
+    order_date DATE
+);
 
-</details>
+INSERT INTO orders VALUES 
+(1, 101, 250.00, '2025-01-10'),
+(2, 102, 150.00, '2025-01-10'),
+(3, 101, 300.00, '2025-01-11'),
+(4, 103, 450.00, '2025-01-11'),
+(5, 104, 120.00, '2025-01-12'),
+(6, 101, 200.00, '2025-01-12');
+```
 
 ---
 
-### Problem 3: Average Salary by Department
+## 📝 THE QUESTIONS
 
-**Task:** What's the average salary in each department?
+### 🟢 LEVEL 1: The Essentials (Sections 0–8)
 
-**Write your query:**
-```sql
-[Your answer here]
-```
+**Q1.** How many total employees work at the company?
 
-<details>
-<summary>📝 Solution</summary>
+**Q2.** What is the total salary paid to all employees? *(Remember the NULL!)*
 
-```sql
-SELECT department, AVG(salary) as avg_salary
-FROM employees
-GROUP BY department;
-```
+**Q3.** What is the average salary of all employees? *(Round to 2 decimals)*
 
-**Output:**
-```
-department  avg_salary
-IT          55,000.00
-HR          47,500.00
-Sales       45,000.00
-```
+**Q4.** Who earns the highest salary, and who earns the lowest? *(Write one query that shows both values)*
 
-</details>
+**Q5.** How many **different** departments exist in the company?
 
 ---
 
-### Problem 4: Orders by Status
-
-**Task:** Count orders in each status category
-
-**Write your query:**
-```sql
-[Your answer here]
-```
-
-<details>
-<summary>📝 Solution</summary>
-
-```sql
-SELECT status, COUNT(*) as order_count
-FROM orders
-GROUP BY status;
-```
-
-**Output:**
-```
-status      order_count
-Delivered   4
-Pending     1
-Cancelled   1
-```
-
-</details>
-
----
-
-### Problem 5: Total Spend by Customer
-
-**Task:** How much has each customer spent?
-
-**Write your query:**
-```sql
-[Your answer here]
-```
-
-<details>
-<summary>📝 Solution</summary>
-
-```sql
-SELECT customer_id, SUM(amount) as total_spent
-FROM orders
-GROUP BY customer_id;
-```
-
-**Output:**
-```
-customer_id  total_spent
-101          37,500
-102          50,000
-103          8,000
-104          3,500
-105          1,200
-```
-
-</details>
-
----
-
-## 🟡 MEDIUM PROBLEMS (6-10)
-
-### Problem 6: Employee Count and Total Salary
-
-**Task:** Show employee count and total salary for each department
-
-**Write your query:**
-```sql
-[Your answer here]
-```
-
-<details>
-<summary>📝 Solution</summary>
-
-```sql
-SELECT department, 
-       COUNT(*) as emp_count, 
-       SUM(salary) as total_salary
-FROM employees
-GROUP BY department;
-```
-
-**Output:**
-```
-department  emp_count  total_salary
-IT          3          165,000
-HR          2          95,000
-Sales       1          45,000
-```
-
-</details>
-
----
-
-### Problem 7: Salary Range by Department
-
-**Task:** Show min and max salary for each department
-
-**Write your query:**
-```sql
-[Your answer here]
-```
-
-<details>
-<summary>📝 Solution</summary>
-
-```sql
-SELECT department,
-       MIN(salary) as lowest,
-       MAX(salary) as highest,
-       (MAX(salary) - MIN(salary)) as range
-FROM employees
-GROUP BY department;
-```
-
-**Output:**
-```
-department  lowest  highest  range
-IT          45,000  70,000   25,000
-HR          40,000  55,000   15,000
-Sales       45,000  45,000   0
-```
-
-</details>
-
----
-
-### Problem 8: Departments with More Than 1 Employee
-
-**Task:** Show only departments with more than 1 employee
-
-**Write your query:**
-```sql
-[Your answer here]
-```
-
-<details>
-<summary>📝 Solution</summary>
-
-```sql
-SELECT department, COUNT(*) as emp_count
-FROM employees
-GROUP BY department
-HAVING COUNT(*) > 1;
-```
-
-**Output:**
-```
-department  emp_count
-IT          3
-HR          2
-```
-
-**Explanation:** HAVING filters groups after aggregation. Sales excluded (only 1 employee)
-
-</details>
-
----
-
-### Problem 9: Employees with Salary Above Department Average
-
-**Task:** Show employees earning more than their department's average
-
-**Write your query:**
-```sql
-[Your answer here]
-```
-
-<details>
-<summary>📝 Solution</summary>
-
-```sql
-SELECT emp_name, department, salary
-FROM employees
-WHERE salary > (
-    SELECT AVG(salary)
-    FROM employees e2
-    WHERE e2.department = employees.department
-)
-ORDER BY department, salary DESC;
-```
-
-**Output:**
-```
-emp_name  department  salary
-Neha      IT          70,000  (avg IT is 55k)
-Priya     HR          55,000  (avg HR is 47.5k)
-```
-
-</details>
-
----
-
-### Problem 10: Top Department by Total Salary
-
-**Task:** Which department has highest total salary expense?
-
-**Write your query:**
-```sql
-[Your answer here]
-```
-
-<details>
-<summary>📝 Solution</summary>
-
-```sql
-SELECT department, SUM(salary) as total_salary
-FROM employees
-GROUP BY department
-ORDER BY total_salary DESC
-LIMIT 1;
-```
-
-**Output:**
-```
-department  total_salary
-IT          165,000
-```
-
-</details>
-
----
-
-## 🔴 HARD PROBLEMS (11-15)
-
-### Problem 11: Multiple Aggregates with Filter
-
-**Task:** For each department, show employee count, total salary, average salary (only for salary > 45,000)
-
-**Write your query:**
-```sql
-[Your answer here]
-```
-
-<details>
-<summary>📝 Solution</summary>
-
-```sql
-SELECT department,
-       COUNT(*) as all_employees,
-       COUNT(CASE WHEN salary > 45000 THEN 1 END) as high_earners,
-       SUM(salary) as total_salary,
-       AVG(CASE WHEN salary > 45000 THEN salary END) as avg_high_earner
-FROM employees
-GROUP BY department;
-```
-
-**Output:**
-```
-department  all_employees  high_earners  total_salary  avg_high_earner
-IT          3              2             165,000       60,000
-HR          2              1             95,000        55,000
-Sales       1              0             45,000        NULL
-```
-
-</details>
-
----
-
-### Problem 12: Customer Analysis
-
-**Task:** Show total orders, total amount, and average order value by customer. Include only customers with total spend > 10,000
-
-**Write your query:**
-```sql
-[Your answer here]
-```
-
-<details>
-<summary>📝 Solution</summary>
-
-```sql
-SELECT customer_id,
-       COUNT(*) as order_count,
-       SUM(amount) as total_spent,
-       AVG(amount) as avg_order_value
-FROM orders
-GROUP BY customer_id
-HAVING SUM(amount) > 10000
-ORDER BY total_spent DESC;
-```
-
-**Output:**
-```
-customer_id  order_count  total_spent  avg_order_value
-102          2            50,000       25,000.00
-101          2            37,500       18,750.00
-```
-
-</details>
-
----
-
-### Problem 13: Group By Multiple Columns
-
-**Task:** Count orders by customer and status
-
-**Write your query:**
-```sql
-[Your answer here]
-```
-
-<details>
-<summary>📝 Solution</summary>
-
-```sql
-SELECT customer_id, status, COUNT(*) as order_count
-FROM orders
-GROUP BY customer_id, status
-ORDER BY customer_id, order_count DESC;
-```
-
-**Output:**
-```
-customer_id  status      order_count
-101          Delivered   2
-102          Delivered   1
-102          Pending     1
-103          Delivered   1
-104          Cancelled   1
-105          Delivered   1
-```
-
-</details>
-
----
-
-### Problem 14: DISTINCT vs GROUP BY
-
-**Task:** Show unique customers and unique statuses separately
-
-**Write your queries:**
-```sql
-[Your answers here]
-```
-
-<details>
-<summary>📝 Solution</summary>
-
-**Unique customers:**
-```sql
-SELECT COUNT(DISTINCT customer_id) as unique_customers
-FROM orders;
-```
-
-**Output:**
-```
-unique_customers
-5
-```
-
-**Unique statuses:**
-```sql
-SELECT DISTINCT status
-FROM orders;
-```
-
-**Output:**
-```
-status
-Delivered
-Pending
-Cancelled
-```
-
-**Key difference:**
-- COUNT(DISTINCT) gives a number (5 customers)
-- DISTINCT gives the actual values
-
-</details>
-
----
-
-### Problem 15: Complex Analysis
-
-**Task:** For each department, show:
-- Employee count
-- Total salary
-- Average salary
+### 🟡 LEVEL 2: The Advanced Playbook (Sections 9–17)
+
+**Q6.** Write a single query that shows **ALL** of these statistics for the employees table:
+- Total staff count
+- Total payroll
+- Average salary (rounded to 2 decimals)
 - Lowest salary
 - Highest salary
-- Number of employees hired after 2020
-- Only departments with average salary > 45,000
 
-**Write your query:**
-```sql
-[Your answer here]
-```
+**Q7.** What is the total revenue (sum of `amount`) from orders placed on **January 10, 2025**?
+
+**Q8.** What is the average order value **for the entire orders table**, rounded to 2 decimal places?
+
+**Q9.** How many **unique customers** placed orders?
+
+**Q10.** What is the total payroll **specifically for the Sales department**?
+
+---
+
+### 🔴 LEVEL 3: The Boss Challenges (Trap Questions)
+
+**Q11.** *(The HAVING Trap)*  
+Write a query to find **which departments** have a total payroll **greater than $100,000**.  
+*(Hint: You cannot use `WHERE` for this!)*
+
+**Q12.** *(Math on Aggregates)*  
+Write a query to show:
+- The highest salary
+- The lowest salary
+- The **difference** between them (Pay Gap)
+
+**Q13.** *(Counting NULLs)*  
+Write a query to count **exactly how many employees** have a `NULL` salary.
+
+**Q14.** *(Bonus: COALESCE Rescue)*  
+Write a query that returns the average salary of all employees. **But if the result is `NULL`** (imagine the table was empty), show `0` instead.
+
+---
+
+## ✅ THE ANSWER KEY (No Peeking Until You Try!)
 
 <details>
-<summary>📝 Solution</summary>
+<summary><b>🔽 Click Here to Reveal All Answers</b></summary>
 
+---
+
+**Q1. Total Employees**
 ```sql
-SELECT department,
-       COUNT(*) as emp_count,
-       SUM(salary) as total_salary,
-       ROUND(AVG(salary), 2) as avg_salary,
-       MIN(salary) as lowest_salary,
-       MAX(salary) as highest_salary,
-       COUNT(CASE WHEN YEAR(hire_date) > 2020 THEN 1 END) as recent_hires
+SELECT COUNT(*) FROM employees;
+-- Result: 6
+```
+
+---
+
+**Q2. Total Payroll**
+```sql
+SELECT SUM(salary) FROM employees;
+-- Result: 262,000  (55k + 48k + 65k + 42k + 52k = 262k, NULL skipped)
+```
+
+---
+
+**Q3. Average Salary (Rounded)**
+```sql
+SELECT ROUND(AVG(salary), 2) FROM employees;
+-- Result: 52,400.00  (262,000 ÷ 5 known salaries = 52,400)
+```
+
+---
+
+**Q4. Highest & Lowest Salary**
+```sql
+SELECT MAX(salary) AS highest, MIN(salary) AS lowest FROM employees;
+-- Result: highest = 65,000, lowest = 42,000
+```
+
+---
+
+**Q5. Different Departments**
+```sql
+SELECT COUNT(DISTINCT department) FROM employees;
+-- Result: 3 (Sales, IT, HR)
+```
+
+---
+
+**Q6. All Statistics in One Query**
+```sql
+SELECT 
+    COUNT(*) AS total_staff,
+    SUM(salary) AS total_payroll,
+    ROUND(AVG(salary), 2) AS avg_salary,
+    MIN(salary) AS lowest,
+    MAX(salary) AS highest
+FROM employees;
+-- Result: 6 | 262000 | 52400.00 | 42000 | 65000
+```
+
+---
+
+**Q7. Revenue on Jan 10, 2025**
+```sql
+SELECT SUM(amount) FROM orders WHERE order_date = '2025-01-10';
+-- Result: 400.00  (250 + 150)
+```
+
+---
+
+**Q8. Average Order Value (Rounded)**
+```sql
+SELECT ROUND(AVG(amount), 2) FROM orders;
+-- Result: 245.00  (Total 1470 ÷ 6)
+```
+
+---
+
+**Q9. Unique Customers**
+```sql
+SELECT COUNT(DISTINCT customer_id) FROM orders;
+-- Result: 4 (101, 102, 103, 104)
+```
+
+---
+
+**Q10. Sales Department Payroll**
+```sql
+SELECT SUM(salary) FROM employees WHERE department = 'Sales';
+-- Result: 155,000  (55k + 48k + 52k)
+```
+
+---
+
+**Q11. Departments with Payroll > 100,000 (HAVING)**
+```sql
+SELECT department, SUM(salary) AS total_payroll
 FROM employees
 GROUP BY department
-HAVING AVG(salary) > 45000
-ORDER BY avg_salary DESC;
+HAVING SUM(salary) > 100000;
+-- Result: Sales = 155,000 (IT = 65k, HR = 42k, so only Sales qualifies)
 ```
 
-**Output:**
-```
-department  emp_count  total_salary  avg_salary  lowest_salary  highest_salary  recent_hires
-IT          3          165,000       55,000.00   45,000         70,000          1
-HR          2          95,000        47,500.00   40,000         55,000          1
+---
+
+**Q12. Pay Gap (Highest - Lowest)**
+```sql
+SELECT 
+    MAX(salary) AS highest,
+    MIN(salary) AS lowest,
+    MAX(salary) - MIN(salary) AS pay_gap
+FROM employees;
+-- Result: highest=65000, lowest=42000, pay_gap=23000
 ```
 
-**Explanation:**
-- ROUND() formats average salary to 2 decimal places
-- CASE counts employees hired after 2020
-- HAVING filters for avg_salary > 45,000
-- Sales excluded (avg_salary = 45,000, not > 45,000)
+---
+
+**Q13. Count of NULL Salaries**
+```sql
+SELECT COUNT(*) - COUNT(salary) AS null_count FROM employees;
+-- Result: 1 (Neha has NULL)
+```
+
+---
+
+**Q14. Average Salary with COALESCE (NULL Safety)**
+```sql
+SELECT COALESCE(ROUND(AVG(salary), 2), 0) AS safe_avg FROM employees;
+-- Result: 52400.00 (If the table was empty, it would show 0 instead of NULL)
+```
 
 </details>
 
 ---
+
+## 📊 HOW TO USE THESE QUESTIONS
+
+| Goal | Action |
+| :--- | :--- |
+| **Self-Test** | Cover the answers. Write all 14 queries from memory. Check your results. |
+
+---
+
+**You have officially graduated from reading to doing.** Go crush these queries! 🚀
