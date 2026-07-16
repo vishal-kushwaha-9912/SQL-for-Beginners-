@@ -24,7 +24,7 @@ FROM employees;
 | **6** | **$305,000** | **$50,833.33** |
 
 That is the *magic* of Aggregate Functions. **They shrink mountains of data into a single snapshot.** Now, let's learn the 5 tools that did that.
-
+<img src="../IMAGES/SHEET4/aggregate_decision_flowchart.png" width="1000">
 ---
 
 ## SECTION 1: THE 5 SUPERPOWERS (THE TOOLS)
@@ -36,6 +36,8 @@ That is the *magic* of Aggregate Functions. **They shrink mountains of data into
 | ⚖️ | **`AVG()`** | *"Find the balancing point."* | "What's the typical order?" |
 | ⬇️ | **`MIN()`** | *"Dig up the smallest."* | "What's the cheapest item?" |
 | ⬆️ | **`MAX()`** | *"Reach for the largest."* | "What's the top salary?" |
+
+<img src="../IMAGES/SHEET4/aggregate_functions_overview.png" width="1000" >
 
 ---
 
@@ -62,7 +64,6 @@ INSERT INTO employees VALUES
 ```
 
 **Now, whenever you see a code block below, type it in and watch what happens!**
-
 ---
 
 ## SECTION 3: 🧨 THE #1 GOLDEN RULE (NULL = "SKIP IT")
@@ -123,6 +124,7 @@ SELECT COUNT(column_name) FROM table_name;
 | :--- | :--- | :--- |
 | `SELECT COUNT(*)` | Counts **ALL rows**, even if they are fully empty. | *"Total staff headcount."* |
 | `SELECT COUNT(salary)` | Counts rows **only if salary has a real number**. | *"How many salaries did we actually enter?"* |
+<img src="../IMAGES/SHEET4/count_function_visual.png" width="1000">
 
 **👉 Run these on your new data:**
 
@@ -157,6 +159,7 @@ SELECT SUM(salary) FROM employees;
 (Neha and Mohit? SQL waved goodbye to them because they were NULL).
 → Result: 195,000
 ```
+<img src="../IMAGES/SHEET4/sum_function_visual.png" width="1000">
 
 **⚠️ CRITICAL WARNING:** 
 `SUM()` is **Numbers ONLY**. 
@@ -177,7 +180,7 @@ SELECT ROUND(AVG(column_name), 2) FROM table_name;
 ```sql
 SELECT ROUND(AVG(salary), 2) FROM employees;
 ```
-
+<img src="../IMAGES/SHEET4/avg_function_visual.png" width="1000">
 **⚰️ THE TRAP REVEALED (Read this slowly):**
 
 Most beginners think: *"There are 6 employees. I will divide by 6."* 
@@ -226,6 +229,8 @@ SELECT MAX(salary) FROM employees;  -- Result: 55,000 (Priya wins)
 | **Text** | `SELECT MAX(product_name) FROM products;` | Alphabetically **Last** (e.g., "Zebra") |
 | **Dates** | `SELECT MIN(hire_date) FROM employees;` | **Oldest** hire date (e.g., 2010-01-01) |
 | **Dates** | `SELECT MAX(hire_date) FROM employees;` | **Newest** hire date (e.g., 2025-06-01) |
+---
+<img src="../IMAGES/SHEET4/min_max_functions_visual.png" width="1000">
 
 ---
 
