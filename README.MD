@@ -320,7 +320,7 @@ Prefer reading in a browser? All chapters are published on Hashnode!
 | 2 | WHERE Clause | [📖 Read Chapter 2](https://detailsnotes.hashnode.dev/sql-chapter-2) | ✅ |
 | 3 | ORDER BY | [📖 Read Chapter 3](https://detailsnotes.hashnode.dev/chapter-3-order-by) | ✅ |
 | 4 | Aggregate Functions | [📖 Read Chapter 4](https://detailsnotes.hashnode.dev/chapter-4-aggregate-functions) | ✅ |
-| 5 | GROUP BY | [📖 Read Chapter 5](https://detailsnotes.hashnode.dev/chapter-5-group-by) | ✅ NEW! |
+| 5 | GROUP BY | [📖 Read Chapter 5](https://detailsnotes.hashnode.dev/chapter-5-sql-group-by) | ✅ NEW! |
 
 **Note:** Chapters 1-5 are now live! Chapter 6 (JOINs) coming soon!
 
