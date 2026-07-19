@@ -2,7 +2,6 @@
 
 ## Learn GROUP BY Step-by-Step with Visual Examples, Real-World Scenarios, Interactive Practice & 25 Exercises
 
-
 ## 🎯 WHAT YOU'LL LEARN (By The End)
 
 ✅ What GROUP BY does (in SIMPLE terms!)  
@@ -194,7 +193,6 @@ SQL does **NOT** run from top to bottom! It runs in this specific order:
 ### 📊 Visual Execution Flow (Memory Aid)
 
 <img src="../IMAGES/SHEET5/sql_execution_order.png" width="1000">
-
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -615,9 +613,7 @@ HR + Chennai:    40,000
 ✅ Can see city-wise distribution  
 ✅ Much more useful information
 
-
 <img src="../IMAGES/SHEET5/multiple_column_grouping.png" width="1000">
-
 
 ## Step-by-Step Example
 

@@ -1,32 +1,6 @@
- <a name="part-15-practice"></a>
- # 📖 PART 15: PRACTICE PROBLEMS & SOLUTIONS (STUDENT EDITION)
-
- ## 📋 SCHEMA & SAMPLE DATA (Run this setup first)
-
-# Sample Data
-```
-CREATE TABLE employees_NEWS (
-    emp_id INT PRIMARY KEY,
-    emp_name VARCHAR(50),
-    department VARCHAR(50),
-    salary DECIMAL(10,2),
-    hire_date DATE
-);
-
-INSERT INTO employees_NEWS VALUES
-(1, 'Rajesh', 'IT', 52000, '2021-01-18'),
-(2, 'Priya', 'Sales', 47000, '2022-04-12'),
-(3, 'Ankit', 'IT', 68000, '2019-08-25'),
-(4, 'Sunita', 'HR', 56000, '2020-02-10'),
-(5, 'Alok', 'IT', 43000, '2023-06-05'),
-(6, 'Geeta', 'HR', 41000, '2021-11-30');
-```
----
-# Orders Table
-```
- ==========================================
-          SALES_RECORDS TABLE
- ==========================================
+-- ==========================================
+-- SALES_RECORDS TABLE
+-- ==========================================
 
 CREATE TABLE sales_records (
     order_id INT,
@@ -51,5 +25,3 @@ INSERT INTO sales_records VALUES
 (210, 'Kiara',  'Printer',       'Electronics',  9500.00, '2026-07-10', 'Cancelled'),
 (211, 'Arnav',  'Mouse',         'Electronics',  1500.00, '2026-07-11', 'Delivered'),
 (212, 'Saanvi', 'Dining Table',  'Furniture',  22000.00, '2026-07-12', 'Pending');
-```
----
