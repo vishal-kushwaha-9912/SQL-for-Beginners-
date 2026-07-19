@@ -1,0 +1,45 @@
+CREATE TABLE employee_compensation (
+    emp_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    department VARCHAR(30),
+    job_grade VARCHAR(20),
+    base_salary DECIMAL(10,2),
+    commission_pct DECIMAL(4,2),
+    hire_date DATE,
+    performance_score INT
+);
+
+INSERT INTO employee_compensation
+(emp_id, first_name, last_name, department, job_grade, base_salary, commission_pct, hire_date, performance_score)
+VALUES
+(1,'Alice','Smith','Engineering','Junior',6500.00,0.00,'2021-03-15',6),
+(2,'Bob','Johnson','Sales','Senior',9000.00,0.10,'2022-01-20',8),
+(3,'Carol','Williams','Finance','Manager',14500.00,0.00,'2020-06-10',9),
+(4,'David','Brown','Marketing','Lead',11000.00,0.05,'2023-02-18',7),
+(5,'Emma','Jones','HR','Senior',8500.00,0.00,'2022-11-01',8),
+(6,'Frank','Garcia','Engineering','Lead',12500.00,0.15,'2021-08-12',9),
+(7,'Grace','Miller','Finance','Junior',7000.00,0.00,'2024-01-15',7),
+(8,'Henry','Davis','Sales','Manager',15000.00,0.20,'2019-12-05',10),
+(9,'Isabella','Rodriguez','Engineering','Senior',9800.00,0.10,'2023-05-25',8),
+(10,'Jack','Martinez','Marketing','Junior',6200.00,0.00,'2024-03-12',6),
+(11,'Karen','Hernandez','HR','Lead',10500.00,0.05,'2021-09-30',9),
+(12,'Leo','Lopez','Finance','Senior',9200.00,0.00,'2022-04-18',7),
+(13,'Mia','Gonzalez','Engineering','Manager',16000.00,0.20,'2020-10-21',10),
+(14,'Noah','Wilson','Sales','Junior',6800.00,0.10,'2023-07-14',5),
+(15,'Olivia','Anderson','Marketing','Senior',9500.00,0.05,'2022-02-09',8),
+(16,'Peter','Thomas','Engineering','Lead',11800.00,0.15,'2021-12-11',9),
+(17,'Queen','Taylor','Finance','Lead',12000.00,0.00,'2023-08-01',8),
+(18,'Ryan','Moore','Sales','Senior',8700.00,0.10,'2022-06-17',7),
+(19,'Sophia','Jackson','HR','Manager',13500.00,0.00,'2020-05-06',9),
+(20,'Thomas','Martin','Engineering','Junior',7200.00,0.00,'2024-02-20',6),
+(21,'Uma','Lee','Marketing','Lead',11200.00,0.05,'2023-10-01',8),
+(22,'Victor','Perez','Finance','Junior',7600.00,0.00,'2021-04-28',7),
+(23,'William','White','Sales','Lead',10800.00,0.15,'2022-12-10',8),
+(24,'Xavier','Harris','Engineering','Senior',9900.00,0.10,'2023-11-18',9),
+(25,'Yara','Clark','HR','Junior',6000.00,0.00,'2024-04-05',5),
+(26,'Zane','Lewis','Marketing','Manager',14200.00,0.05,'2021-01-27',10),
+(27,'Ava','Walker','Finance','Senior',8800.00,0.00,'2022-09-13',8),
+(28,'Brian','Hall','Engineering','Lead',13000.00,0.20,'2020-08-22',9),
+(29,'Chloe','Allen','Sales','Junior',6400.00,0.10,'2024-05-11',6),
+(30,'Daniel','Young','Engineering','Manager',17000.00,0.20,'2019-11-30',10);
