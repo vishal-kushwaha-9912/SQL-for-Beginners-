@@ -1,4 +1,4 @@
-CREATE TABLE employees_NEWS (
+CREATE TABLE new_employees (
     emp_id INT PRIMARY KEY,
     emp_name VARCHAR(50),
     department VARCHAR(50),
@@ -6,7 +6,7 @@ CREATE TABLE employees_NEWS (
     hire_date DATE
 );
 
-INSERT INTO employees_NEWS VALUES
+INSERT INTO new_employees VALUES
 (1, 'Rajesh', 'IT', 52000, '2021-01-18'),
 (2, 'Priya', 'Sales', 47000, '2022-04-12'),
 (3, 'Ankit', 'IT', 68000, '2019-08-25'),

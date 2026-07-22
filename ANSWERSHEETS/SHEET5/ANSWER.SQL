@@ -1,14 +1,13 @@
 
--- ## 🟢 EASY PROBLEMS (1-5)
+--  🟢 EASY PROBLEMS (1-5)
 
--- ### Problem 1: Count Employees by Department
+--  Problem 1: Count Employees by Department
 -- **Task:** How many employees in each department?
 -- **Write your query:**
 
-SELECT department, COUNT(*) AS total_employees
-FROM employees_NEWS
-GROUP BY department;
-
+-- SELECT  department,COUNT(*)
+-- FROM new_employees
+-- GROUP BY department;
 
 
 --  Problem 2: Total Salary by Department
@@ -16,28 +15,27 @@ GROUP BY department;
 -- **Write your query:**
 -- ```sql
 
-SELECT department, SUM(salary) AS total_salary
-FROM employees_NEWS
-GROUP BY department;
-
+-- SELECT department  ,SUM(salary) AS Total_Salary
+-- FROM new_employees
+-- GROUP BY  department;
 
 
 --  Problem 3: Average Salary by Department
 -- **Task:** What's the average salary in each department?
 -- **Write your query:**
 
-SELECT department, AVG(salary) AS average_salary
-FROM employees_NEWS
-GROUP BY department;
-
-
+-- SELECT department ,AVG(salary) AS Average_Salary
+-- FROM new_employees
+-- GROUP BY  department;
 
 
 --  Problem 4: Orders by Status
 -- **Task:** Count orders in each status category.
 -- **Write your query:**
 
-
+-- SELECT [status] , COUNT([status])
+-- FROM sales_records
+-- GROUP BY [status];
 
 
 
@@ -45,52 +43,52 @@ GROUP BY department;
 --  Problem 5: Total Spend by Customer
 -- **Task:** How much has each customer spent in total?
 -- **Write your query:**
--- ```sql
--- [Your answer here]
--- ```
 
--- ---
+-- SELECT customer_name , SUM(amount) AS Total_Spend
+-- FROM sales_records
+-- GROUP BY customer_name  ;
 
--- ## 🟡 MEDIUM PROBLEMS (6-10)
 
--- ### Problem 6: Employee Count and Total Salary
+
+--  🟡 MEDIUM PROBLEMS (6-10)
+
+--  Problem 6: Employee Count and Total Salary
 -- **Task:** Show employee count and total salary for each department.
 -- **Write your query:**
--- ```sql
--- [Your answer here]
--- ```
 
--- ---
+-- SELECT  department , SUM(salary)AS Total_Salary,COUNT(*) AS Total_Employee
+-- FROM new_employees
+-- GROUP BY department;
 
--- ### Problem 7: Salary Range by Department
+
+--  Problem 7: Salary Range by Department
 -- **Task:** Show the minimum, maximum, and salary range (max - min) for each department.
 -- **Write your query:**
--- ```sql
--- [Your answer here]
--- ```
 
--- ---
+-- SELECT department , MIN(salary)AS minimum_salary , MAX(salary) AS maximum_salary , (MAX(salary) - MIN(salary)) AS salary_range
+-- FROM new_employees
+-- GROUP BY department;
 
--- ### Problem 8: Departments with More Than 1 Employee
+
+--  Problem 8: Departments with More Than 1 Employee
 -- **Task:** Show only departments that have more than 1 employee.
 -- **Write your query:**
--- ```sql
--- [Your answer here]
--- ```
 
--- ---
+-- SELECT department  , COUNT(*) AS Total_Employees
+-- FROM new_employees
+-- GROUP BY department 
+-- HAVING COUNT(*)>1;
 
--- ### Problem 9: Employees with Salary Above Department Average
+
+--  Problem 9: Employees with Salary Above Department Average
 -- **Task:** Show employees earning more than their own department's average salary.
 -- **Hint:** You will need a subquery that references the outer table (correlated subquery).
 -- **Write your query:**
--- ```sql
--- [Your answer here]
--- ```
 
--- ---
 
--- ### Problem 10: Top Department by Total Salary
+
+
+--  Problem 10: Top Department by Total Salary
 -- **Task:** Which department has the highest total salary expense? (Show only the top 1).
 -- **Write your query:**
 -- ```sql
