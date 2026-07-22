@@ -85,21 +85,32 @@
 -- **Hint:** You will need a subquery that references the outer table (correlated subquery).
 -- **Write your query:**
 
-
+-- SELECT emp_name ,department,salary 
+-- FROM new_employees AS A1
+-- WHERE salary > 
+-- (
+--     SELECT  AVG(salary) AS Average_Salary
+--     FROM new_employees AS A2
+--     WHERE A1.department = A2.department
+-- );
 
 
 --  Problem 10: Top Department by Total Salary
 -- **Task:** Which department has the highest total salary expense? (Show only the top 1).
 -- **Write your query:**
--- ```sql
--- [Your answer here]
--- ```
 
--- ---
+-- SELECT TOP 1
+--     department,
+--     SUM(salary) AS Total_Salary
+-- FROM new_employees
+-- GROUP BY department
+-- ORDER BY SUM(salary) DESC;
 
--- ## 🔴 HARD PROBLEMS (11-15)
 
--- ### Problem 11: Multiple Aggregates with Conditional Filter
+
+--  🔴 HARD PROBLEMS (11-15)
+
+--  Problem 11: Multiple Aggregates with Conditional Filter
 -- **Task:** For each department, show:
 -- - Total employee count
 -- - Count of employees earning *more* than 45,000
