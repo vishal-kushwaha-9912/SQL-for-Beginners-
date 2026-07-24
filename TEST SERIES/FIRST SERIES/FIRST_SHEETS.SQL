@@ -124,7 +124,12 @@
 
 -- Show only the top performer.
 
--- ---
+-- SELECT TOP 1 
+--  sales_person,
+--  SUM(amount) AS Total_Sales
+-- FROM sales_records 
+-- GROUP BY sales_person
+-- ORDER BY  SUM(amount) DESC;
 
 --   Question 8 – Pending Orders
 
@@ -138,7 +143,12 @@
 
 -- Sort by highest amount first.
 
--- ---
+-- SELECT order_id , customer_name , amount 
+-- FROM sales_records
+-- WHERE [status] = 'pending'
+-- ORDER BY amount DESC;
+
+
 
 --   Question 9 – Payment Analysis
 
@@ -149,13 +159,30 @@
 -- * Payment Method
 -- * Number of Orders
 
--- ---
+-- SELECT payment_method ,COUNT(order_id) AS Total_orders
+-- FROM sales_records
+-- GROUP BY payment_method;
+
+--                     -- OR 
+
+-- SELECT payment_method ,COUNT(*) AS Total_orders
+-- FROM sales_records
+-- GROUP BY payment_method;
+
 
 --   Question 10 – High Revenue Categories
 
 -- Find categories that generated **more than ₹500,000** in total revenue.
 
--- ---
+-- SELECT  category ,
+-- SUM(amount) AS Total_Revenue
+-- FROM sales_records
+-- GROUP BY category
+-- HAVING SUM(amount) > 500000;
+
+
+
+
 
 --   Question 11 – Customer Spending Report
 
