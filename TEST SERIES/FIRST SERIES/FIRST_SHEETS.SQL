@@ -44,8 +44,8 @@
 -- Write a query to show the total revenue.
 
 
--- SELECT SUM(amount) AS Total_revenue
--- FROM sales_records;
+SELECT SUM(amount) AS Total_revenue
+FROM sales_recor;
 
 
 
@@ -57,10 +57,10 @@
 -- **Task:**
 -- Count only the delivered orders.
 
--- SELECT status  , COUNT(*) AS order_list
--- FROM sales_records
--- WHERE [status] = 'delivered'
--- GROUP BY STATUS  ;
+SELECT status  , COUNT(*) AS order_list
+FROM sales_recor
+WHERE [status] = 'delivered'
+GROUP BY STATUS  ;
 
 
 
@@ -71,9 +71,9 @@
 -- **Task:**
 -- Display all details of the highest-value order.
 
--- SELECT TOP 1 *
--- FROM sales_records
--- ORDER BY amount DESC;
+SELECT TOP 1 *
+FROM sales_recor
+ORDER BY amount DESC;
 
 
 --   Question 4 – Sales by Category
@@ -83,9 +83,9 @@
 -- **Task:**
 -- Show total revenue for every category.
 
--- SELECT category , SUM(amount)  AS Total_Revenue
--- FROM sales_records
--- GROUP BY category;
+SELECT category , SUM(amount)  AS Total_Revenue
+FROM sales_recor
+GROUP BY category;
 
 
 
@@ -96,11 +96,11 @@
 -- **Task:**
 -- Show city and total number of orders.
  
--- SELECT city,
---        COUNT(*) AS Total_Order
--- FROM sales_records
--- GROUP BY city
--- HAVING COUNT(*) > 6;
+SELECT city,
+       COUNT(*) AS Total_Order
+FROM sales_recor
+GROUP BY city
+HAVING COUNT(*) > 6;
 
 --   Question 6 – Premium Customers
 
@@ -111,10 +111,10 @@
 -- * Customer Name
 -- * Average Purchase
 
--- SELECT customer_name  , AVG(amount) AS Average_purs
--- FROM sales_records
--- GROUP BY customer_name
--- HAVING AVG(amount)>50000;
+SELECT customer_name  , AVG(amount) AS Average_purs
+FROM sales_recor
+GROUP BY customer_name
+HAVING AVG(amount)>50000;
 
 
 
@@ -124,12 +124,12 @@
 
 -- Show only the top performer.
 
--- SELECT TOP 1 
---  sales_person,
---  SUM(amount) AS Total_Sales
--- FROM sales_records 
--- GROUP BY sales_person
--- ORDER BY  SUM(amount) DESC;
+SELECT TOP 1 
+ sales_person,
+ SUM(amount) AS Total_Sales
+FROM sales_recor 
+GROUP BY sales_person
+ORDER BY  SUM(amount) DESC;
 
 --   Question 8 – Pending Orders
 
@@ -143,10 +143,10 @@
 
 -- Sort by highest amount first.
 
--- SELECT order_id , customer_name , amount 
--- FROM sales_records
--- WHERE [status] = 'pending'
--- ORDER BY amount DESC;
+SELECT order_id , customer_name , amount 
+FROM sales_recor
+WHERE [status] = 'pending'
+ORDER BY amount DESC;
 
 
 
@@ -159,28 +159,26 @@
 -- * Payment Method
 -- * Number of Orders
 
--- SELECT payment_method ,COUNT(order_id) AS Total_orders
--- FROM sales_records
--- GROUP BY payment_method;
+SELECT payment_method ,COUNT(order_id) AS Total_orders
+FROM sales_recor
+GROUP BY payment_method;
 
 --                     -- OR 
 
--- SELECT payment_method ,COUNT(*) AS Total_orders
--- FROM sales_records
--- GROUP BY payment_method;
+SELECT payment_method ,COUNT(*) AS Total_orders
+FROM sales_recor
+GROUP BY payment_method;
 
 
 --   Question 10 – High Revenue Categories
 
 -- Find categories that generated **more than ₹500,000** in total revenue.
 
--- SELECT  category ,
--- SUM(amount) AS Total_Revenue
--- FROM sales_records
--- GROUP BY category
--- HAVING SUM(amount) > 500000;
-
-
+SELECT  category ,
+SUM(amount) AS Total_Revenue
+FROM sales_recor
+GROUP BY category
+HAVING SUM(amount) > 500000;
 
 
 
@@ -192,7 +190,12 @@
 
 -- Sort from highest spender to lowest.
 
--- ---
+SELECT customer_name ,SUM(amount) AS Total_spent
+FROM sales_recor
+GROUP BY customer_name 
+ORDER BY Total_spent DESC ;
+
+
 
 --   Question 12 – Largest Order in Each Category
 
@@ -203,7 +206,12 @@
 -- * Category
 -- * Highest Order Amount
 
--- ---
+SELECT category, MAX(amount) AS Highest_Order_Placed
+FROM sales_recor
+GROUP BY category;
+
+
+
 
 --   Question 13 – Daily Business Report
 
@@ -215,13 +223,22 @@
 
 -- Sort by date.
 
--- ---
+
+SELECT order_date , SUM(amount) AS Total_Revenue , COUNT(order_id)
+ FROM sales_recor
+GROUP BY order_date
+ ORDER BY order_date ASC;
+
 
 --   Question 14 – VIP Cities
 
 -- Find cities where the **average order amount is greater than ₹40,000**.
 
--- ---
+SELECT city , AVG(amount) AS Total_Revenue
+FROM sales_recor
+GROUP BY city
+HAVING AVG(amount) > 40000;
+
 
 --   Question 15 – Executive Dashboard Question
 
@@ -235,7 +252,12 @@
 -- * Total Revenue
 -- * Total Orders
 
--- ---
+SELECT TOP 5
+ category , SUM(amount) AS Total_Revenue, COUNT(*) AS Number_of_orders
+FROM sales_recor 
+GROUP BY category
+ORDER BY Total_Revenue DESC;
+
 
 --    Difficulty Level
 

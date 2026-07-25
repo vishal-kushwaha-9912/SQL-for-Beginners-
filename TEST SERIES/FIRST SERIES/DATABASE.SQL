@@ -2,7 +2,7 @@
 -- SALES_RECORDS TABLE
 -- ==========================================
 
-CREATE TABLE sales_records (
+CREATE TABLE sales_recor (
     order_id INT PRIMARY KEY,
     customer_name VARCHAR(50),
     product_name VARCHAR(50),
@@ -15,7 +15,7 @@ CREATE TABLE sales_records (
     status VARCHAR(20)
 );
 
-INSERT INTO sales_records VALUES
+INSERT INTO sales_recor VALUES
 (101, 'Aarav',   'Laptop',      'Electronics', 65000.00, '2026-01-05', 'Delhi',     'Rohan',   'UPI',         'Delivered'),
 (102, 'Priya',   'Phone',       'Electronics', 35000.00, '2026-01-06', 'Mumbai',    'Anita',   'Credit Card', 'Delivered'),
 (103, 'Rahul',   'Shoes',       'Fashion',      4500.00, '2026-01-06', 'Delhi',     'Rohan',   'Cash',        'Pending'),
