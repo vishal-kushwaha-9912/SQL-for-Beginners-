@@ -12,6 +12,9 @@
 -- **Output Columns:** category_id, product_count  
 -- **Expected Rows:** Varies based on data
 
+
+
+
 -- **Write Your Query:**  
 
 --  Exercise 2: Find Departments with Total Salary Budget Over $500k
