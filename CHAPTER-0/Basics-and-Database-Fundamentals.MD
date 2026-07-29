@@ -165,7 +165,7 @@ Creates a new empty folder to store your data.
 ### The Command:
 
 ```sql
-CREATE DATABASE CollegeDB;   // HERE CollegeDB IS DATABASE NAME 
+CREATE DATABASE CollegeDB;   // HERE CollegeDB IS DATABASE NAME
 ```
 
 ### Important! ⚠️
