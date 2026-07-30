@@ -1,5 +1,4 @@
-
-CREATE DATABASE IF NOT EXISTS Library_Management_System;
+CREATE DATABASE Library_Management_System;
 USE Library_Management_System;
 
 CREATE TABLE BOOKS(
@@ -12,9 +11,9 @@ price decimal(10,2)not null,
 Available_copies int not null
 );
 
-INSERT INTO BOOKS
-(Books_id, title, Author, Genre, publication_year, price, Available_copies)
-VALUES
+insert into BOOKS
+(Books_id, title, Author, Genre, publication_year,price,Available_copies)
+value 
 (1, 'Atomic Habits', 'James Clear', 'Self Help', 2018, 25.99, 10),
 (2, 'Python Crash Course', 'Eric Matthes', 'Programming', 2023, 39.99, 5),
 (3, 'The Alchemist', 'Paulo Coelho', 'Fiction', 1988, 15.99, 8),
@@ -25,6 +24,7 @@ VALUES
 (8, 'Introduction to Algorithms', 'Thomas H. Cormen', 'Computer Science', 2022, 89.99, 4),
 (9, 'The Pragmatic Programmer', 'Andrew Hunt', 'Programming', 2019, 49.99, 5),
 (10, 'Think and Grow Rich', 'Napoleon Hill', 'Self Help', 1937, 17.50, 11);
+
 
 
 create table MEMBERS(
@@ -74,18 +74,17 @@ VALUES
 (9, 109, 9, '2026-07-28', NULL),
 (10, 110, 10, '2026-07-29', '2026-08-08');
 
---  RUN THESE QUERIES TO CHECK .
+
+-- select * from BOOKS
+-- select * from  borrow_history
+
+-- SELECT COUNT(*) FROM Members;
+-- SELECT COUNT(*) FROM BOOKS;
 
 
-SELECT * FROM BOOKS;
+-- SELECT *
+-- FROM borrow_history
+-- WHERE Return_date IS NULL;
 
-SELECT * FROM borrow_history;
 
-SELECT COUNT(*) FROM Members;
-
-SELECT COUNT(*) FROM BOOKS;
-
-SELECT *
-FROM borrow_history
-WHERE Return_date IS NULL;
 
