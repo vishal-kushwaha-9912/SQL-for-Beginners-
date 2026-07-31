@@ -5,9 +5,9 @@
 | Property         | Value                            |
 | ---------------- | -------------------------------- |
 | **Author**       | VISHAL KUSHWAHA                  |
-| **Version**      | 3.2                              |
+| **Version**      | 3.3                              |
 | **Status**       | 85% Complete (6 of 6-7 chapters) |
-| **Last Updated** | July 2026                        |
+| **Last Updated** | August 2026                      |
 
 ---
 
@@ -47,6 +47,7 @@ Read     Visualize   Practice    Learn
 | **Real-World Examples** | 30+            | Business scenarios        |
 | **Answer Keys**         | Complete       | Full solutions            |
 | **Test Series**         | 1+             | Comprehensive assessments |
+| **Live Projects**       | 3+             | Real database projects    |
 
 ---
 
@@ -293,11 +294,165 @@ SQL Learning Path/
 ├── BASIC PRACTICE SHEETS/
 │   └── Practice materials
 │
+├── PROJECTS/                        # 🆕 Real Database Projects
+│   ├── Employee-Database/
+│   │   ├── Employess.SQL
+│   │   ├── Departments.SQL
+│   │   ├── Salaries.SQL
+│   │   ├── Performance_Reviews.SQL
+│   │   ├── Employee_Leave.SQL
+│   │   ├── Employee_Login.SQL
+│   │   ├── Employee_Project.SQL
+│   │   └── QUERY_RUN.SQL
+│   ├── Library-Management/
+│   │   └── Library_Manage.SQL
+│   ├── Enterprise-Employee/
+│   │   └── Enterprise-Emplo.SQL
+│   └── PROJECT_IDEAS.md
+│
 ├── PATH/
 │   └── Learning-Roadmap.md
 │
 └── README.md (This file)
 ```
+
+---
+
+## 🎪 PROJECTS SECTION - Real Database Applications
+
+### Overview
+
+This section showcases **practical database projects** that apply the SQL concepts you're learning. These are real-world scenarios built with the same tables and relationships you'll encounter in job interviews and actual development work.
+
+---
+
+### 📦 Project 1: Employee Management System (Active)
+
+**Status:** ✅ In Development  
+**Complexity:** Intermediate  
+**Tables:** 8 Core + Relationships  
+**Real-World Use:** HR departments, Payroll systems, Project tracking
+
+#### Database Schema:
+
+| Table                   | Purpose                     | Records            |
+| ----------------------- | --------------------------- | ------------------ |
+| **Employess**           | Employee master data        | 10 employees       |
+| **Departments**         | Department info & locations | 10 departments     |
+| **Salaries**            | Salary tracking & payments  | 10 payment records |
+| **Project_table**       | Project information         | 10 active projects |
+| **Employee_Project**    | Project assignments         | 10 assignments     |
+| **Performance_Reviews** | Employee evaluations        | 10 reviews         |
+| **Login_System**        | User authentication         | 10 user accounts   |
+| **Leave_Management**    | Leave requests & approvals  | 10 leave records   |
+
+#### Data Features:
+
+- ✅ Real employee data with IT, HR, Finance, Sales, Marketing roles
+- ✅ Multiple departments across Indian cities (Delhi, Mumbai, Bangalore, etc.)
+- ✅ Salary tracking with bonuses and payment methods
+- ✅ Project assignments with status tracking (Active, Completed, Planning)
+- ✅ Performance ratings (Outstanding, Excellent, Good, Average)
+- ✅ Leave management with approval workflows
+- ✅ Login system with roles (Admin, HR, Manager, Employee)
+
+#### Practice Queries You Can Build:
+
+```sql
+-- Example 1: Department salary analysis
+SELECT Department, COUNT(*) as emp_count, AVG(salary) as avg_salary
+FROM Employess
+GROUP BY Department
+HAVING COUNT(*) > 2
+ORDER BY avg_salary DESC;
+
+-- Example 2: Project team members
+SELECT p.project_name, COUNT(ep.Employess_id) as team_size,
+       p.budgest, p.status
+FROM Project_table p
+LEFT JOIN Employee_Project ep ON p.project_id = ep.project_id
+GROUP BY p.project_id, p.project_name, p.budgest, p.status
+HAVING COUNT(ep.Employess_id) > 0;
+
+-- Example 3: Performance analysis by department
+SELECT e.Department, pr.Rating, COUNT(*) as count
+FROM Employess e
+JOIN Performance_Reviews pr ON e.Employess_id = pr.Employess_id
+GROUP BY e.Department, pr.Rating
+ORDER BY e.Department;
+
+-- Example 4: Leave statistics
+SELECT Leave_Type, Leave_Status, COUNT(*) as count,
+       COUNT(CASE WHEN Leave_Status = 'Approved' THEN 1 END) as approved_count
+FROM Leave_Management
+GROUP BY Leave_Type, Leave_Status;
+
+-- Example 5: Active projects with team details
+SELECT
+    p.project_name,
+    p.status,
+    COUNT(ep.Employess_id) as team_members,
+    SUM(CASE WHEN lm.Leave_Status = 'Approved' THEN 1 ELSE 0 END) as on_leave
+FROM Project_table p
+LEFT JOIN Employee_Project ep ON p.project_id = ep.project_id
+LEFT JOIN Leave_Management lm ON ep.Employess_id = lm.Employess_id
+WHERE p.status IN ('Active', 'In Progress')
+GROUP BY p.project_id, p.project_name, p.status;
+```
+
+#### Learning Outcomes:
+
+- ✅ Build aggregate queries with multiple tables
+- ✅ Master GROUP BY with real business scenarios
+- ✅ Use HAVING to filter department/project groups
+- ✅ Combine WHERE + GROUP BY + HAVING efficiently
+- ✅ Analyze HR and payroll data
+- ✅ Track project team compositions
+
+**Files:**
+
+- Setup: `PROJECTS/Employee-Database/Employess.SQL`
+- Queries: `PROJECTS/Employee-Database/QUERY_RUN.SQL`
+
+---
+
+### 📚 Project 2: Library Management System (Planned)
+
+**Status:** 🏗️ Schema Ready  
+**Complexity:** Intermediate  
+**Real-World Use:** Library systems, Inventory tracking, Patron management
+
+#### Planned Features:
+
+- Books catalog with ISBN, author, publication date
+- Member/patron records
+- Borrowing transactions
+- Overdue tracking
+- Fines and payments
+
+**Files:**
+
+- Setup: `PROJECTS/Library-Management/Library_Manage.SQL`
+
+---
+
+### 🏢 Project 3: Enterprise Employee Management (Planned)
+
+**Status:** 🏗️ Schema Ready  
+**Complexity:** Advanced  
+**Real-World Use:** Large enterprises, Multi-location HR, Corporate analytics
+
+#### Planned Features:
+
+- Multiple office locations
+- Hierarchical reporting structure
+- Payroll and benefits
+- Training records
+- Performance analytics
+
+**Files:**
+
+- Setup: `PROJECTS/Enterprise-Employee/Enterprise-Emplo.SQL`
 
 ---
 
@@ -327,7 +482,11 @@ Read explanations to learn the reasoning behind solutions.
 
 Work through `TEST SERIES/` to assess your knowledge comprehensively.
 
-### Step 7: Move Forward
+### Step 7: Apply to Real Projects
+
+Use the databases in `PROJECTS/` to write real-world queries and build portfolio pieces.
+
+### Step 8: Move Forward
 
 Once comfortable, advance to the next chapter.
 
@@ -351,8 +510,11 @@ Phase 3B: Advanced Filtering
 Phase 4: Advanced
 ░░░░░░░░░░░░░░░░░░░░   0% ⏳ (Planning)
 
+Projects: Employee Database
+████████████████░░░░  75% 🆕 (Active)
+
 ─────────────────────────────────
-Overall Progress: ████████████████░░░  85% 🎉
+Overall Progress: ████████████████░░  87% 🎉 (Updated!)
 ```
 
 ---
@@ -409,6 +571,15 @@ Everything above, plus:
 - **Debug HAVING errors effectively**
 - **Real-world: Business filtering, dashboard queries, performance optimization**
 
+### 🆕 After Project 1: Employee Database (Active) 🎯
+
+- Apply all learned SQL concepts to real schemas
+- Write queries for HR/payroll analysis
+- Build multi-table aggregate queries
+- Create dashboard-style reports
+- Solve real business problems
+- Build portfolio-quality SQL code
+
 ### ⏳ After Phase 4 (Coming)
 
 - Join multiple tables (INNER, LEFT, RIGHT, FULL)
@@ -455,15 +626,18 @@ After completing all theory chapters, use TEST SERIES/FIRST SERIES to assess you
 **"Can I skip chapters?"**  
 Not recommended. Each chapter builds on previous ones. Linear progression works best.
 
+**"How do I practice with real databases?"**  
+Use the databases in the PROJECTS folder! They have realistic schemas and data for HR, payroll, and project management scenarios.
+
 **"How long does this take?"**  
-12-14 weeks at 1-2 hours per day, or adjust based on your pace.
+12-14 weeks at 1-2 hours per day, or adjust based on your pace. Project work accelerates learning!
 
 ---
 
 ## ✨ What Makes This Course Great
 
 ✅ **Beginner-Friendly** - Plain language, no jargon  
-✅ **Hands-On** - 95+ exercises + solutions  
+✅ **Hands-On** - 95+ exercises + solutions + live databases  
 ✅ **Visual Learning** - 30+ professional SVG/PNG diagrams  
 ✅ **Real-World** - Business scenarios you'll use in jobs  
 ✅ **Expert Quality** - Professional level (9-9.5/10)  
@@ -472,25 +646,61 @@ Not recommended. Each chapter builds on previous ones. Linear progression works 
 ✅ **Common Mistakes** - Learn what NOT to do  
 ✅ **Execution Flow** - Understand HOW SQL actually runs queries  
 ✅ **Multiple Examples** - See each concept from 3-5 angles  
-✅ **Test Series** - Comprehensive assessments for mastery
+✅ **Test Series** - Comprehensive assessments for mastery  
+✅ **Live Projects** - 🆕 Real database projects for portfolio
 
 ---
 
 ## 📊 Stats at a Glance
 
-| Metric               | Count            |
-| -------------------- | ---------------- |
-| Chapters Completed   | 6 out of 6-7     |
-| Total Content Lines  | 19,000+          |
-| Practice Exercises   | 95+              |
-| Challenge Problems   | 70+              |
-| Visual Diagrams      | 30+              |
-| Real-World Templates | 30+              |
-| Topics Covered       | 75+              |
-| Test Series          | 1+               |
-| Estimated Duration   | 12-14 weeks      |
-| Quality Rating       | 9-9.5/10         |
-| **Overall Progress** | **85% Complete** |
+| Metric               | Count                |
+| -------------------- | -------------------- |
+| Chapters Completed   | 6 out of 6-7         |
+| Total Content Lines  | 19,000+              |
+| Practice Exercises   | 95+                  |
+| Challenge Problems   | 70+                  |
+| Visual Diagrams      | 30+                  |
+| Real-World Templates | 30+                  |
+| Database Projects    | 1 Active + 2 Planned |
+| Project Tables       | 8+ per project       |
+| Sample Records       | 100+ total           |
+| Topics Covered       | 75+                  |
+| Test Series          | 1+                   |
+| Estimated Duration   | 12-14 weeks          |
+| Quality Rating       | 9-9.5/10             |
+| **Overall Progress** | **87% Complete**     |
+
+---
+
+## 🆕 What's New in Version 3.3
+
+### Latest Updates (August 2026)
+
+✅ **NEW: Projects Section Added**
+
+- Employee Database Project (Active) - 8 tables, 100+ records
+- Library Management (Planned)
+- Enterprise Employee System (Planned)
+- Real-world query examples for each project
+
+✅ **Enhanced Project Organization**
+
+- Dedicated PROJECTS/ folder
+- SQL setup files for each database
+- Query examples for learning and portfolio building
+
+✅ **Portfolio Building**
+
+- Use projects for GitHub portfolio
+- Build real-world query solutions
+- Create database documentation
+- Demonstrate SQL mastery to employers
+
+✅ **Progress Update**
+
+- Overall completion: **87%** (up from 85%)
+- Added practical project work track
+- Integrated with theory chapters
 
 ---
 
@@ -501,20 +711,23 @@ Not recommended. Each chapter builds on previous ones. Linear progression works 
    - 12 practice exercises + 8 challenges
    - Combine WHERE + GROUP BY + HAVING
 
-2. **Week 2-3:** Practice comprehensive scenarios
-   - Business filtering with HAVING
-   - Dashboard query creation
-   - Complex GROUP BY + HAVING queries
+2. **Week 2-3:** Start Employee Database Project
+   - Load Employee-Database schema
+   - Run sample queries from QUERY_RUN.SQL
+   - Write your own GROUP BY + HAVING queries
+   - Document findings in GitHub
 
 3. **Week 4-5:** Prepare for assessment
    - Review all Phase 3 and 3B concepts
    - Work through TEST SERIES/FIRST SERIES
+   - Complete Employee Database queries
    - Validate mastery
 
 4. **Week 6+:** Phase 4 (JOINs and advanced topics)
    - Combining multiple tables
    - Subqueries and CTEs
    - Window functions
+   - Start Library Management Project
 
 ---
 
@@ -532,6 +745,8 @@ Not recommended. Each chapter builds on previous ones. Linear progression works 
 | Teach someone else         | Reinforces your learning              |
 | Review past chapters       | Keeps knowledge fresh                 |
 | Take test series           | Validates comprehensive understanding |
+| **Use project databases**  | **Apply theory to real data** 🆕      |
+| **Build portfolio pieces** | **Show employers your work** 🆕       |
 
 ---
 
@@ -549,6 +764,9 @@ Not recommended. Each chapter builds on previous ones. Linear progression works 
 | Test assessment          | `TEST SERIES/FIRST SERIES/`                 |
 | Database setup for tests | `TEST SERIES/FIRST SERIES/DATABASE.SQL`     |
 | Test sheets              | `TEST SERIES/FIRST SERIES/FIRST_SHEETS.SQL` |
+| **Employee Project**     | **`PROJECTS/Employee-Database/`** 🆕        |
+| **Project SQL files**    | **`PROJECTS/Employee-Database/*.SQL`** 🆕   |
+| **Project ideas**        | **`PROJECTS/PROJECT_IDEAS.md`** 🆕          |
 
 ---
 
@@ -556,18 +774,22 @@ Not recommended. Each chapter builds on previous ones. Linear progression works 
 
 ```
 Created by: VISHAL KUSHWAHA
-Version: 3.2 (Updated with HAVING)
-Status: 85% Complete (Chapters 1-6 Done)
+Version: 3.3 (Updated with Projects Section)
+Status: 87% Complete (Chapters 1-6 + Projects)
 Quality: Professional (9-9.5/10)
-Last Updated: July 2026
+Last Updated: August 2026
 
 Recent Updates:
+✅ Added Projects Section with Employee Database
+✅ Added practical query examples for real-world scenarios
 ✅ Added Chapter 6: HAVING Clause (Expert Edition)
 ✅ Added TEST SERIES with First Series assessment
 ✅ 30+ total diagrams for visual learning
 ✅ 30+ real-world business examples
 ✅ 95+ practice exercises total
 ✅ 70+ challenge problems
+✅ 1 Active Project + 2 Planned
+✅ 100+ sample database records
 ```
 
 ---
@@ -588,12 +810,17 @@ Phase 3: Aggregation ✅ (Complete)
   ├─ Chapter 4: Aggregate Functions
   ├─ Chapter 5: GROUP BY
   ↓
-Phase 3B: Advanced Filtering ✅ (Complete) 🎉
+Phase 3B: Advanced Filtering ✅ (Complete)
   ├─ Chapter 6: HAVING Clause [NEW!]
+  ↓
+PROJECTS TRACK 🆕 (Active)
+  ├─ Employee Database ✅ (Setup Complete)
+  ├─ Write query solutions
+  ├─ Build portfolio examples
   ↓
 TEST SERIES ⏳
   ├─ First Series✅
-  └─second series ⏳(Coming)
+  └─ Second series ⏳(Coming)
   ↓
 Phase 4: Advanced Queries ⏳ (Coming)
   ├─ Chapter 7: JOINs
@@ -606,9 +833,9 @@ SQL EXPERT! 🏆
 
 ---
 
-## 🎉 You're Already 85% There!
+## 🎉 You're Already 87% There!
 
-You've completed **6 out of 6-7 chapters**. Every query you write, every mistake you fix, every concept you understand - it's building your SQL expertise.
+You've completed **6 out of 6-7 chapters + Active Project Work**. Every query you write, every mistake you fix, every concept you understand - it's building your SQL expertise.
 
 **You now have:**
 
@@ -619,6 +846,7 @@ You've completed **6 out of 6-7 chapters**. Every query you write, every mistake
 - ✅ Real-world analysis templates
 - ✅ Understanding of complete query execution
 - ✅ 95+ solved practice problems
+- ✅ 🆕 Live database project for portfolio
 
 **You're ready for:**
 
@@ -628,6 +856,8 @@ You've completed **6 out of 6-7 chapters**. Every query you write, every mistake
 - Product analysis
 - Customer insights
 - Complex filtered aggregate queries
+- 🆕 Job interviews with real examples
+- 🆕 GitHub portfolio pieces
 
 **Next milestone:** Master JOINs to combine multiple tables (Phase 4)
 
@@ -698,7 +928,8 @@ ORDER BY avg_sal DESC;
 
 ---
 
-**Happy Learning! 🚀**
+**Learning! 🚀**
 
 _This course was created with passion for helping others master SQL._  
-_Use it wisely, practice consistently, and enjoy the learning journey!_
+_Use it wisely, practice consistently, and enjoy the learning journey!_  
+_Now with real database projects to build your portfolio! 💼_
