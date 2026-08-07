@@ -16,11 +16,7 @@
 -- - Order: by avg_salary DESC
 
 -- **Write Your Query:**
--- ```sql
-
--- ```
-
--- ---
+ 
 
 --  Challenge 2: E-Commerce Analysis - Top Spending Customers
 

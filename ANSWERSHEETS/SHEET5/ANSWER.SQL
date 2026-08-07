@@ -5,9 +5,9 @@
 -- **Task:** How many employees in each department?
 -- **Write your query:**
 
--- SELECT  department,COUNT(*)
--- FROM new_employees
--- GROUP BY department;
+SELECT  department,COUNT(*)
+FROM new_employees
+GROUP BY department;
 
 
 --  Problem 2: Total Salary by Department
@@ -15,27 +15,27 @@
 -- **Write your query:**
 -- ```sql
 
--- SELECT department  ,SUM(salary) AS Total_Salary
--- FROM new_employees
--- GROUP BY  department;
+SELECT department  ,SUM(salary) AS Total_Salary
+FROM new_employees
+GROUP BY  department;
 
 
 --  Problem 3: Average Salary by Department
 -- **Task:** What's the average salary in each department?
 -- **Write your query:**
 
--- SELECT department ,AVG(salary) AS Average_Salary
--- FROM new_employees
--- GROUP BY  department;
+SELECT department ,AVG(salary) AS Average_Salary
+FROM new_employees
+GROUP BY  department;
 
 
 --  Problem 4: Orders by Status
 -- **Task:** Count orders in each status category.
 -- **Write your query:**
 
--- SELECT [status] , COUNT([status])
--- FROM sales_records
--- GROUP BY [status];
+SELECT [status] , COUNT([status])
+FROM sales_records
+GROUP BY [status];
 
 
 
@@ -44,9 +44,9 @@
 -- **Task:** How much has each customer spent in total?
 -- **Write your query:**
 
--- SELECT customer_name , SUM(amount) AS Total_Spend
--- FROM sales_records
--- GROUP BY customer_name  ;
+SELECT customer_name , SUM(amount) AS Total_Spend
+FROM sales_records
+GROUP BY customer_name  ;
 
 
 
@@ -56,28 +56,33 @@
 -- **Task:** Show employee count and total salary for each department.
 -- **Write your query:**
 
--- SELECT  department , SUM(salary)AS Total_Salary,COUNT(*) AS Total_Employee
--- FROM new_employees
--- GROUP BY department;
+SELECT  department , 
+SUM(salary)AS Total_Salary,
+COUNT(*) AS Total_Employee
+FROM new_employees
+GROUP BY department;
 
 
 --  Problem 7: Salary Range by Department
 -- **Task:** Show the minimum, maximum, and salary range (max - min) for each department.
 -- **Write your query:**
 
--- SELECT department , MIN(salary)AS minimum_salary , MAX(salary) AS maximum_salary , (MAX(salary) - MIN(salary)) AS salary_range
--- FROM new_employees
--- GROUP BY department;
+SELECT department , 
+MIN(salary)AS minimum_salary ,
+ MAX(salary) AS maximum_salary , 
+ (MAX(salary) - MIN(salary)) AS salary_range
+FROM new_employees
+GROUP BY department;
 
 
 --  Problem 8: Departments with More Than 1 Employee
 -- **Task:** Show only departments that have more than 1 employee.
 -- **Write your query:**
 
--- SELECT department  , COUNT(*) AS Total_Employees
--- FROM new_employees
--- GROUP BY department 
--- HAVING COUNT(*)>1;
+SELECT department  , COUNT(*) AS Total_Employees
+FROM new_employees
+GROUP BY department 
+HAVING COUNT(*)>1;
 
 
 --  Problem 9: Employees with Salary Above Department Average
@@ -85,26 +90,26 @@
 -- **Hint:** You will need a subquery that references the outer table (correlated subquery).
 -- **Write your query:**
 
--- SELECT emp_name ,department,salary 
--- FROM new_employees AS A1
--- WHERE salary > 
--- (
---     SELECT  AVG(salary) AS Average_Salary
---     FROM new_employees AS A2
---     WHERE A1.department = A2.department
--- );
+SELECT emp_name ,department,salary 
+FROM new_employees AS A1
+WHERE salary > 
+(
+    SELECT  AVG(salary) AS Average_Salary
+    FROM new_employees AS A2
+    WHERE A1.department = A2.department
+);
 
 
 --  Problem 10: Top Department by Total Salary
 -- **Task:** Which department has the highest total salary expense? (Show only the top 1).
 -- **Write your query:**
 
--- SELECT TOP 1
---     department,
---     SUM(salary) AS Total_Salary
--- FROM new_employees
--- GROUP BY department
--- ORDER BY SUM(salary) DESC;
+SELECT TOP 1
+    department,
+    SUM(salary) AS Total_Salary
+FROM new_employees
+GROUP BY department
+ORDER BY SUM(salary) DESC;
 
 
 

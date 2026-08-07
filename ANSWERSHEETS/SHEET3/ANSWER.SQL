@@ -412,12 +412,13 @@ ORDER BY total_revenue DESC;
 
 -- **Or simpler version (using employees table only):**
 -- ```sql
--- SELECT department, COUNT(*) AS emp_count, SUM(salary) AS salary_cost
--- FROM employees
--- GROUP BY department
--- HAVING SUM(salary) > 100000
--- ORDER BY salary_cost DESC;
--- ```
+SELECT department, COUNT(*) AS emp_count, 
+SUM(salary) AS salary_cost
+FROM employees
+GROUP BY department
+HAVING SUM(salary) > 100000
+ORDER BY salary_cost DESC;
+```
 
 -- **Output:**
 -- ```
@@ -435,9 +436,10 @@ ORDER BY total_revenue DESC;
 -- **Key Learning:** ORDER BY works with GROUP BY and HAVING!
 
 -- **Common Mistake:**
--- ```sql
--- -- WRONG - WHERE can't use aggregates
--- WHERE SUM(salary) > 100000;
+ 
+-- WRONG - WHERE can't use aggregates
 
--- -- RIGHT - HAVING is for groups
--- HAVING SUM(salary) > 100000;
+WHERE SUM(salary) > 100000;
+
+-- RIGHT - HAVING is for groups
+HAVING SUM(salary) > 100000;
