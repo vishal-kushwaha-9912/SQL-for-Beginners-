@@ -1,13 +1,13 @@
-# SQL Learning Path - Complete Guide
+ # SQL Learning Path - Complete Guide
 
 **A comprehensive, hands-on SQL course from beginner to advanced**
 
-| Property         | Value                            |
-| ---------------- | -------------------------------- |
-| **Author**       | VISHAL KUSHWAHA                  |
-| **Version**      | 3.3                              |
-| **Status**       | 85% Complete (6 of 6-7 chapters) |
-| **Last Updated** | August 2026                      |
+| Property         | Value                                |
+| ---------------- | ------------------------------------ |
+| **Author**       | VISHAL KUSHWAHA                      |
+| **Version**      | 3.4                                  |
+| **Status**       | 90% Complete (7 of 8 chapters)       |
+| **Last Updated** | August 2026                          |
 
 ---
 
@@ -39,12 +39,12 @@ Read     Visualize   Practice    Learn
 
 | Component               | Quantity       | Purpose                   |
 | ----------------------- | -------------- | ------------------------- |
-| **Chapters**            | 6/6-7 Complete | Core SQL topics           |
-| **Theory Content**      | 19,000+ lines  | Expert explanations       |
-| **Practice Exercises**  | 95+            | Hands-on learning         |
-| **Challenge Problems**  | 70+            | Progressive difficulty    |
+| **Chapters**            | 7/8 Complete   | Core SQL topics           |
+| **Theory Content**      | 22,000+ lines  | Expert explanations       |
+| **Practice Exercises**  | 105+           | Hands-on learning         |
+| **Challenge Problems**  | 80+            | Progressive difficulty    |
 | **Visual Diagrams**     | 30+            | SVG illustrations         |
-| **Real-World Examples** | 30+            | Business scenarios        |
+| **Real-World Examples** | 40+            | Business scenarios        |
 | **Answer Keys**         | Complete       | Full solutions            |
 | **Test Series**         | 1+             | Comprehensive assessments |
 | **Live Projects**       | 3+             | Real database projects    |
@@ -180,7 +180,7 @@ Master the art of grouping and analyzing data by categories:
 
 ### Phase 3B: Advanced Filtering (✅ 100% Complete)
 
-#### ✅ Chapter 6: HAVING Clause (Complete - Expert Edition) 🎉 NEW!
+#### ✅ Chapter 6: HAVING Clause (Complete - Expert Edition)
 
 Master filtering groups after aggregation with HAVING:
 
@@ -229,9 +229,72 @@ Master filtering groups after aggregation with HAVING:
 
 ---
 
-### Phase 4: Advanced Queries (⏳ Planning)
+### Phase 4: Multi-Table Queries (✅ 70% Complete)
 
-Topics: JOINs, subqueries, UNION, window functions
+#### ✅ Chapter 7: JOINs (Complete - Beginner to Advanced)
+
+Master combining data from multiple tables - the most powerful SQL skill!
+
+**Core Concepts:**
+
+- What is a JOIN? (The problem it solves)
+- Table relationships and matching
+- The 4 JOIN types explained:
+  - **INNER JOIN** - Only matching rows
+  - **LEFT JOIN** - All from left + matches from right
+  - **RIGHT JOIN** - All from right + matches from left
+  - **FULL OUTER JOIN** - Everything from both tables
+
+**Beginner-Friendly Topics:**
+
+- Simple real-world analogies (matching student IDs with class names)
+- When to use each JOIN type
+- Common mistakes and how to fix them
+- NULL values in JOIN results
+- Multi-table JOINs (joining 3+ tables)
+
+**Intermediate Topics:**
+
+- WHERE vs ON in JOINs
+- Self-joins (joining a table to itself)
+- Outer joins and finding unmatched data
+- Cross joins (Cartesian products)
+- Join performance optimization
+- Debugging JOIN problems
+
+**Advanced Topics:**
+
+- Common Table Expressions (CTEs) for complex queries
+- Window functions (RANK, ROW_NUMBER, AVG, etc.)
+- Recursive CTEs for hierarchies
+- Query optimization strategies
+- Database-specific JOIN syntax
+
+**Quality:** 9/10 (Comprehensive beginner to advanced)  
+**Content:** 5000+ lines | 40+ examples | 15+ practice problems  
+**Practice:** 15 exercises + 10 challenges + 3 projects  
+**Real-World Examples:** 
+- Customer + Orders + Products queries
+- Finding inactive customers
+- Counting orders per customer
+- Employee + Departments + Salaries analysis
+- Organizational hierarchies
+
+**Resources:**
+- `CHAPTER-7/SIMPLE_JOINS.md` - Start here! (Beginner-friendly)
+- `CHAPTER-7/BASIC_JOINS.md` - Core concepts and 4 JOIN types
+- `CHAPTER-7/ADVANCED_JOINS.md` - CTEs, window functions, recursive CTEs
+
+**What You'll Build:**
+
+- Connect multiple tables in meaningful ways
+- Find data relationships across tables
+- Identify missing or orphan records
+- Create multi-table reports
+- Analyze customers with their orders
+- Build organizational structures
+- Count aggregates across tables
+- Portfolio-quality queries combining 3+ tables
 
 ---
 
@@ -256,23 +319,35 @@ SQL Learning Path/
 │   └── GROUP-BY-COMPLETE.md
 │
 ├── CHAPTER-6/
-│   └── HAVING.md [NEW! 🎉 Expert Edition]
+│   └── HAVING.md
 │
-├── IMAGES/                          # Diagrams for visual learning
+├── CHAPTER-7/                           # 🎉 JOINs - NEW!
+│   ├── SIMPLE_JOINS.md                 # Start here (beginner-friendly)
+│   ├── BASIC_JOINS.md                  # Core JOIN types & concepts
+│   └── ADVANCED_JOINS.md               # CTEs, window functions, recursion
+│
+├── IMAGES/                              # Diagrams for visual learning
 │   ├── group_by_concept_visual.png
 │   ├── sql_execution_order.png
 │   ├── where_vs_having_comparison.png
 │   ├── multiple_column_grouping.png
 │   ├── aggregate_functions_overview.png
+│   ├── join_types_venn_diagram.png     # 🆕 JOINs visual
+│   ├── inner_join_example.png          # 🆕 INNER JOIN
+│   ├── left_join_example.png           # 🆕 LEFT JOIN
 │   └── ... (30+ total)
 │
 ├── PRACTICESHEET/
-│   ├── SHEET-1.md (Phase 1)
-│   ├── SHEET-2.md (Phase 2 - WHERE)
-│   ├── SHEET-3.md (Phase 2 - ORDER BY)
-│   ├── SHEET-4.md (Phase 3 - Aggregates)
-│   ├── SHEET-5.md (Phase 3 - GROUP BY)
-│   └── SHEET-6.md (Phase 3B - HAVING) ✅ [NEW!]
+│   ├── CHAPTER-1/
+│   ├── CHAPTER-2/
+│   ├── CHAPTER-3/
+│   ├── CHAPTER-4/
+│   ├── CHAPTER-5/
+│   ├── CHAPTER-6/
+│   └── CHAPTER-7/                      # 🆕 JOINs practice sheets
+│       ├── DATABASE/                   # Sample databases
+│       ├── QUESTIONS/                  # Practice problems
+│       └── BASICS.md                   # Quick reference
 │
 ├── ANSWERSHEETS/
 │   ├── SHEET-1/ (SELECT & FROM answers)
@@ -280,9 +355,8 @@ SQL Learning Path/
 │   ├── SHEET-3/ (ORDER BY answers)
 │   ├── SHEET-4/ (Aggregate answers)
 │   ├── SHEET-5/ (GROUP BY answers)
-│   │   ├── SETUP.SQL
-│   │   └── ANSWER.SQL
-│   └── SHEET-6/ (HAVING answers) ✅ [NEW!]
+│   ├── SHEET-6/ (HAVING answers)
+│   └── SHEET-7/ (JOINs answers) ✅ [NEW!]
 │       ├── SETUP.SQL
 │       └── ANSWER.SQL
 │
@@ -294,7 +368,7 @@ SQL Learning Path/
 ├── BASIC PRACTICE SHEETS/
 │   └── Practice materials
 │
-├── PROJECTS/                        # 🆕 Real Database Projects
+├── PROJECTS/                            # 🆕 Real Database Projects
 │   ├── Employee-Database/
 │   │   ├── Employess.SQL
 │   │   ├── Departments.SQL
@@ -359,14 +433,14 @@ This section showcases **practical database projects** that apply the SQL concep
 #### Practice Queries You Can Build:
 
 ```sql
--- Example 1: Department salary analysis
+-- Example 1: Department salary analysis with GROUP BY
 SELECT Department, COUNT(*) as emp_count, AVG(salary) as avg_salary
 FROM Employess
 GROUP BY Department
 HAVING COUNT(*) > 2
 ORDER BY avg_salary DESC;
 
--- Example 2: Project team members
+-- Example 2: Project team members with LEFT JOIN
 SELECT p.project_name, COUNT(ep.Employess_id) as team_size,
        p.budgest, p.status
 FROM Project_table p
@@ -374,40 +448,44 @@ LEFT JOIN Employee_Project ep ON p.project_id = ep.project_id
 GROUP BY p.project_id, p.project_name, p.budgest, p.status
 HAVING COUNT(ep.Employess_id) > 0;
 
--- Example 3: Performance analysis by department
+-- Example 3: Employee details with departments (INNER JOIN)
+SELECT e.Name, e.Salary, d.Department, d.Location
+FROM Employess e
+INNER JOIN Departments d ON e.DepartmentID = d.DepartmentID
+ORDER BY d.Department, e.Salary DESC;
+
+-- Example 4: Performance analysis by department
 SELECT e.Department, pr.Rating, COUNT(*) as count
 FROM Employess e
 JOIN Performance_Reviews pr ON e.Employess_id = pr.Employess_id
 GROUP BY e.Department, pr.Rating
 ORDER BY e.Department;
 
--- Example 4: Leave statistics
-SELECT Leave_Type, Leave_Status, COUNT(*) as count,
-       COUNT(CASE WHEN Leave_Status = 'Approved' THEN 1 END) as approved_count
-FROM Leave_Management
-GROUP BY Leave_Type, Leave_Status;
-
--- Example 5: Active projects with team details
+-- Example 5: Active projects with team details and salaries
 SELECT
     p.project_name,
     p.status,
-    COUNT(ep.Employess_id) as team_members,
+    COUNT(DISTINCT ep.Employess_id) as team_members,
+    AVG(e.Salary) as avg_team_salary,
     SUM(CASE WHEN lm.Leave_Status = 'Approved' THEN 1 ELSE 0 END) as on_leave
 FROM Project_table p
 LEFT JOIN Employee_Project ep ON p.project_id = ep.project_id
+LEFT JOIN Employess e ON ep.Employess_id = e.Employess_id
 LEFT JOIN Leave_Management lm ON ep.Employess_id = lm.Employess_id
 WHERE p.status IN ('Active', 'In Progress')
-GROUP BY p.project_id, p.project_name, p.status;
+GROUP BY p.project_id, p.project_name, p.status
+ORDER BY avg_team_salary DESC;
 ```
 
 #### Learning Outcomes:
 
-- ✅ Build aggregate queries with multiple tables
-- ✅ Master GROUP BY with real business scenarios
-- ✅ Use HAVING to filter department/project groups
-- ✅ Combine WHERE + GROUP BY + HAVING efficiently
+- ✅ Build queries with multiple JOINs
+- ✅ Combine JOINs with GROUP BY and HAVING
+- ✅ Master aggregate queries with real business scenarios
+- ✅ Use LEFT JOIN to find missing data
 - ✅ Analyze HR and payroll data
 - ✅ Track project team compositions
+- ✅ Create comprehensive reports with multiple tables
 
 **Files:**
 
@@ -468,7 +546,7 @@ Review diagrams in `IMAGES/` folder to visualize concepts.
 
 ### Step 3: Practice
 
-Complete exercises from `PRACTICESHEET/SHEET-X.md`
+Complete exercises from `PRACTICESHEET/CHAPTER-X/` or corresponding SHEET files.
 
 ### Step 4: Check Answers
 
@@ -505,16 +583,16 @@ Phase 3: Aggregation
 ████████████████████ 100% ✅
 
 Phase 3B: Advanced Filtering
-████████████████████ 100% ✅ (Ch.6 Complete!)
+████████████████████ 100% ✅
 
-Phase 4: Advanced
-░░░░░░░░░░░░░░░░░░░░   0% ⏳ (Planning)
+Phase 4: Multi-Table Queries
+██████████████░░░░░░  70% 🆕 (Ch.7 Complete!)
 
 Projects: Employee Database
 ████████████████░░░░  75% 🆕 (Active)
 
 ─────────────────────────────────
-Overall Progress: ████████████████░░  87% 🎉 (Updated!)
+Overall Progress: ██████████████████  90% 🎉 (Updated!)
 ```
 
 ---
@@ -551,58 +629,80 @@ Everything above, plus:
 - Build real business dashboard queries
 - Know which functions work on which data types
 - Avoid 6+ deadly beginner mistakes
-- **GROUP data by one or multiple columns**
-- **Execute queries in correct order (FROM → WHERE → GROUP BY → HAVING → SELECT)**
-- **Filter rows with WHERE (before grouping, cheaper!)**
-- **Build complex multi-column grouping queries**
+- GROUP data by one or multiple columns
+- Execute queries in correct order (FROM → WHERE → GROUP BY → HAVING → SELECT)
+- Filter rows with WHERE (before grouping, cheaper!)
+- Build complex multi-column grouping queries
 
-### ✅ After Phase 3B (Complete) 🎉
+### ✅ After Phase 3B (Complete)
 
 Everything above, plus:
 
-- **Understand HAVING clause fundamentals**
-- **Know when to use HAVING vs WHERE**
-- **Filter groups after aggregation**
-- **Execute complete query with HAVING**
-- **Combine WHERE + GROUP BY + HAVING**
-- **Apply HAVING with all aggregate functions**
-- **Handle NULL in HAVING**
-- **Recognize common HAVING mistakes**
-- **Debug HAVING errors effectively**
-- **Real-world: Business filtering, dashboard queries, performance optimization**
+- Understand HAVING clause fundamentals
+- Know when to use HAVING vs WHERE
+- Filter groups after aggregation
+- Execute complete query with HAVING
+- Combine WHERE + GROUP BY + HAVING
+- Apply HAVING with all aggregate functions
+- Handle NULL in HAVING
+- Recognize common HAVING mistakes
+- Debug HAVING errors effectively
+
+### ✅ After Phase 4 (70% Complete - Chapter 7 Done!) 🎉
+
+Everything above, plus:
+
+- **Understand what JOINs are and why they matter**
+- **Know the 4 JOIN types and when to use each**
+- **Write INNER JOINs for perfect matches only**
+- **Write LEFT JOINs to keep all from the left table**
+- **Write RIGHT JOINs (or rewrite as LEFT)**
+- **Write FULL OUTER JOINs to get everything**
+- **Join multiple tables together (3+ tables)**
+- **Find unmatched or orphan data**
+- **Combine JOINs with WHERE, GROUP BY, HAVING**
+- **Understand NULL in JOIN results**
+- **Use CTEs (Common Table Expressions) for readability**
+- **Apply window functions (RANK, ROW_NUMBER, etc.)**
+- **Build recursive CTEs for hierarchies**
+- **Debug JOIN problems effectively**
+- **Write portfolio-quality multi-table queries**
 
 ### 🆕 After Project 1: Employee Database (Active) 🎯
 
 - Apply all learned SQL concepts to real schemas
-- Write queries for HR/payroll analysis
-- Build multi-table aggregate queries
-- Create dashboard-style reports
+- Write complex JOINs with real data
+- Combine JOINs with GROUP BY and HAVING
+- Build multi-table reports and dashboards
 - Solve real business problems
-- Build portfolio-quality SQL code
+- Create portfolio-quality SQL code
+- Demonstrate SQL expertise to employers
 
-### ⏳ After Phase 4 (Coming)
+### ⏳ After Phase 5 (Coming Soon)
 
-- Join multiple tables (INNER, LEFT, RIGHT, FULL)
-- Use subqueries for complex filtering
-- Combine results with UNION
-- Advanced window functions
+- Advanced JOINs and optimization
+- Subqueries and derived tables
+- UNION and set operations
+- Performance tuning
+- Real-world database design
 
 ---
 
 ## 📱 Read Online
 
-Prefer reading in a browser? All chapters are published on Hashnode!
+Prefer reading in a browser? Chapters are published on Hashnode!
 
-| Chapter | Topic               | Read Online                                                                          | Status  |
-| ------- | ------------------- | ------------------------------------------------------------------------------------ | ------- |
-| 1       | SELECT & FROM       | [📖 Read Chapter 1](https://detailsnotes.hashnode.dev/sql-chapter-1)                 | ✅      |
-| 2       | WHERE Clause        | [📖 Read Chapter 2](https://detailsnotes.hashnode.dev/sql-chapter-2)                 | ✅      |
-| 3       | ORDER BY            | [📖 Read Chapter 3](https://detailsnotes.hashnode.dev/chapter-3-order-by)            | ✅      |
-| 4       | Aggregate Functions | [📖 Read Chapter 4](https://detailsnotes.hashnode.dev/chapter-4-aggregate-functions) | ✅      |
-| 5       | GROUP BY            | [📖 Read Chapter 5](https://detailsnotes.hashnode.dev/chapter-5-sql-group-by)        | ✅      |
-| 6       | HAVING Clause       | [📖 Read Chapter 6](https://detailsnotes.hashnode.dev/chapter-6-sql-having-clause)   | ✅ NEW! |
+| Chapter | Topic               | Read Online                                                                          | Status      |
+| ------- | ------------------- | ------------------------------------------------------------------------------------ | ----------- |
+| 1       | SELECT & FROM       | [📖 Read Chapter 1](https://detailsnotes.hashnode.dev/sql-chapter-1)                 | ✅          |
+| 2       | WHERE Clause        | [📖 Read Chapter 2](https://detailsnotes.hashnode.dev/sql-chapter-2)                 | ✅          |
+| 3       | ORDER BY            | [📖 Read Chapter 3](https://detailsnotes.hashnode.dev/chapter-3-order-by)            | ✅          |
+| 4       | Aggregate Functions | [📖 Read Chapter 4](https://detailsnotes.hashnode.dev/chapter-4-aggregate-functions) | ✅          |
+| 5       | GROUP BY            | [📖 Read Chapter 5](https://detailsnotes.hashnode.dev/chapter-5-sql-group-by)        | ✅          |
+| 6       | HAVING Clause       | [📖 Read Chapter 6](https://detailsnotes.hashnode.dev/chapter-6-sql-having-clause)   | ✅          |
+| 7       | JOINs (Multi-Table) | [📖 Read Chapter 7](https://detailsnotes.hashnode.dev/chapter-7-sql-joins)           | ✅ **NEW!** |
 
-**Note:** Chapters 1-6 are now live! Chapter 7 (JOINs) coming soon!
+**Note:** Chapters 1-7 are now live! Chapter 8 (Advanced Topics) coming soon!
 
 ---
 
@@ -611,33 +711,37 @@ Prefer reading in a browser? All chapters are published on Hashnode!
 **"How do I get started?"**  
 Start with Chapter 1. Read → Study diagrams → Practice → Check answers.
 
-**"Where's the chapter on JOINs?"**  
-Coming in Phase 4 (4-6 weeks away). Master Phase 3B first!
+**"Where are the JOINs chapters?"**  
+Now in Phase 4, Chapter 7! Start with `SIMPLE_JOINS.md` for beginner-friendly intro.
 
-**"I don't understand HAVING."**  
-This is covered in depth in Chapter 6. It includes multiple real-life analogies and practical examples!
+**"I don't understand JOINs."**  
+This is covered in depth across 3 files in Chapter 7:
+- `SIMPLE_JOINS.md` - Real-world analogy and basic concepts
+- `BASIC_JOINS.md` - The 4 JOIN types explained
+- `ADVANCED_JOINS.md` - CTEs, window functions, optimization
 
-**"What's the difference between WHERE and HAVING?"**  
-Chapter 6 explains this completely with visual comparisons and execution order diagrams.
+**"What's the difference between INNER and LEFT JOIN?"**  
+- INNER: Only rows that match in BOTH tables
+- LEFT: ALL rows from left table + matches from right
 
 **"How do I use TEST SERIES?"**  
-After completing all theory chapters, use TEST SERIES/FIRST SERIES to assess your knowledge comprehensively with database setup and test sheets.
+After completing chapters, use TEST SERIES/FIRST SERIES to assess your knowledge comprehensively.
 
 **"Can I skip chapters?"**  
 Not recommended. Each chapter builds on previous ones. Linear progression works best.
 
 **"How do I practice with real databases?"**  
-Use the databases in the PROJECTS folder! They have realistic schemas and data for HR, payroll, and project management scenarios.
+Use the databases in the PROJECTS folder! They have realistic schemas for HR, payroll, and project management.
 
 **"How long does this take?"**  
-12-14 weeks at 1-2 hours per day, or adjust based on your pace. Project work accelerates learning!
+12-16 weeks at 1-2 hours per day, or adjust based on your pace. Project work accelerates learning!
 
 ---
 
 ## ✨ What Makes This Course Great
 
 ✅ **Beginner-Friendly** - Plain language, no jargon  
-✅ **Hands-On** - 95+ exercises + solutions + live databases  
+✅ **Hands-On** - 105+ exercises + solutions + live databases  
 ✅ **Visual Learning** - 30+ professional SVG/PNG diagrams  
 ✅ **Real-World** - Business scenarios you'll use in jobs  
 ✅ **Expert Quality** - Professional level (9-9.5/10)  
@@ -647,87 +751,96 @@ Use the databases in the PROJECTS folder! They have realistic schemas and data f
 ✅ **Execution Flow** - Understand HOW SQL actually runs queries  
 ✅ **Multiple Examples** - See each concept from 3-5 angles  
 ✅ **Test Series** - Comprehensive assessments for mastery  
-✅ **Live Projects** - 🆕 Real database projects for portfolio
+✅ **Live Projects** - 🆕 Real database projects for portfolio  
+✅ **JOINs Mastery** - 🆕 From beginner-friendly to advanced CTEs  
 
 ---
 
 ## 📊 Stats at a Glance
 
-| Metric               | Count                |
-| -------------------- | -------------------- |
-| Chapters Completed   | 6 out of 6-7         |
-| Total Content Lines  | 19,000+              |
-| Practice Exercises   | 95+                  |
-| Challenge Problems   | 70+                  |
-| Visual Diagrams      | 30+                  |
-| Real-World Templates | 30+                  |
-| Database Projects    | 1 Active + 2 Planned |
-| Project Tables       | 8+ per project       |
-| Sample Records       | 100+ total           |
-| Topics Covered       | 75+                  |
-| Test Series          | 1+                   |
-| Estimated Duration   | 12-14 weeks          |
-| Quality Rating       | 9-9.5/10             |
-| **Overall Progress** | **87% Complete**     |
+| Metric                  | Count                 |
+| ----------------------- | --------------------- |
+| Chapters Completed      | 7 out of 8            |
+| Total Content Lines     | 22,000+               |
+| Practice Exercises      | 105+                  |
+| Challenge Problems      | 80+                   |
+| Visual Diagrams         | 30+                   |
+| Real-World Templates    | 40+                   |
+| Database Projects       | 1 Active + 2 Planned  |
+| Project Tables          | 8+ per project        |
+| Sample Records          | 100+ total            |
+| Topics Covered          | 85+                   |
+| Test Series             | 1+                    |
+| Chapter 7 Files         | 3 (Simple/Basic/Adv)  |
+| Estimated Duration      | 12-16 weeks           |
+| Quality Rating          | 9-9.5/10              |
+| **Overall Progress**    | **90% Complete**      |
 
 ---
 
-## 🆕 What's New in Version 3.3
+## 🆕 What's New in Version 3.4
 
 ### Latest Updates (August 2026)
 
-✅ **NEW: Projects Section Added**
+✅ **MAJOR: Chapter 7 JOINs Complete!**
 
-- Employee Database Project (Active) - 8 tables, 100+ records
-- Library Management (Planned)
-- Enterprise Employee System (Planned)
-- Real-world query examples for each project
+- 3 comprehensive guides (Simple, Basic, Advanced)
+- INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN
+- Multi-table JOINs and complex scenarios
+- CTEs and window functions
+- Recursive CTEs for hierarchies
+- Debugging JOINs guide
+- 15+ practice problems + 10+ challenges
+- 5000+ lines of content with 40+ examples
 
-✅ **Enhanced Project Organization**
+✅ **Enhanced Employee Project**
 
-- Dedicated PROJECTS/ folder
-- SQL setup files for each database
-- Query examples for learning and portfolio building
+- Sample queries now include JOINs
+- Multi-table report examples
+- Demonstrates JOINs with GROUP BY and HAVING
+
+✅ **Updated Progress Tracking**
+
+- Overall completion: **90%** (up from 87%)
+- Phase 4 now 70% complete with Chapter 7 full
+- Chapter 8 (Advanced Topics) planned for Phase 5
 
 ✅ **Portfolio Building**
 
-- Use projects for GitHub portfolio
-- Build real-world query solutions
-- Create database documentation
-- Demonstrate SQL mastery to employers
-
-✅ **Progress Update**
-
-- Overall completion: **87%** (up from 85%)
-- Added practical project work track
-- Integrated with theory chapters
+- JOINs section provides interview-ready examples
+- Multi-table queries for GitHub portfolio
+- Real-world database patterns
+- Demonstrate advanced SQL mastery
 
 ---
 
 ## 🚀 Next Steps
 
-1. **This Week:** Complete Phase 3B
-   - Master Chapter 6 (HAVING)
-   - 12 practice exercises + 8 challenges
-   - Combine WHERE + GROUP BY + HAVING
+1. **This Week:** Explore Chapter 7 (JOINs)
+   - Read SIMPLE_JOINS.md (start here!)
+   - Review BASIC_JOINS.md for JOIN types
+   - Study ADVANCED_JOINS.md for CTEs
 
-2. **Week 2-3:** Start Employee Database Project
-   - Load Employee-Database schema
-   - Run sample queries from QUERY_RUN.SQL
-   - Write your own GROUP BY + HAVING queries
-   - Document findings in GitHub
+2. **Week 2:** Practice JOINs
+   - Complete PRACTICESHEET/CHAPTER-7 exercises
+   - Use provided database setup
+   - Check ANSWERSHEETS/SHEET-7 solutions
 
-3. **Week 4-5:** Prepare for assessment
-   - Review all Phase 3 and 3B concepts
-   - Work through TEST SERIES/FIRST SERIES
-   - Complete Employee Database queries
-   - Validate mastery
+3. **Week 3:** Apply to Projects
+   - Load Employee-Database
+   - Write multi-table JOINs
+   - Combine with GROUP BY + HAVING
 
-4. **Week 6+:** Phase 4 (JOINs and advanced topics)
-   - Combining multiple tables
-   - Subqueries and CTEs
-   - Window functions
-   - Start Library Management Project
+4. **Week 4:** Assess & Advance
+   - Complete TEST SERIES/FIRST SERIES (if not done)
+   - Finalize project examples
+   - Prepare portfolio pieces
+
+5. **Week 5+:** Phase 5 (Advanced Topics)
+   - Subqueries and derived tables
+   - UNION and set operations
+   - Performance optimization
+   - Advanced database patterns
 
 ---
 
@@ -747,6 +860,7 @@ Use the databases in the PROJECTS folder! They have realistic schemas and data f
 | Take test series           | Validates comprehensive understanding |
 | **Use project databases**  | **Apply theory to real data** 🆕      |
 | **Build portfolio pieces** | **Show employers your work** 🆕       |
+| **Master JOINs**           | **Most important skill for jobs** 🆕  |
 
 ---
 
@@ -755,18 +869,22 @@ Use the databases in the PROJECTS folder! They have realistic schemas and data f
 | Looking For...           | Location                                    |
 | ------------------------ | ------------------------------------------- |
 | Chapter theory           | `CHAPTER-X/` folder                         |
-| Practice exercises       | `PRACTICESHEET/SHEET-X.md`                  |
+| Practice exercises       | `PRACTICESHEET/CHAPTER-X/`                  |
 | Exercise answers         | `ANSWERSHEETS/SHEET-X/ANSWER.SQL`           |
 | Visual diagrams          | `IMAGES/` folder                            |
 | Sample data setup        | `ANSWERSHEETS/SHEET-X/SETUP.SQL`            |
 | Learning roadmap         | `PATH/Learning-Roadmap.md`                  |
-| HAVING guide             | `CHAPTER-6/HAVING.md`                       |
+| **JOINs (Beginner)**     | **`CHAPTER-7/SIMPLE_JOINS.md`** 🆕         |
+| **JOINs (Core)**         | **`CHAPTER-7/BASIC_JOINS.md`** 🆕          |
+| **JOINs (Advanced)**     | **`CHAPTER-7/ADVANCED_JOINS.md`** 🆕       |
 | Test assessment          | `TEST SERIES/FIRST SERIES/`                 |
 | Database setup for tests | `TEST SERIES/FIRST SERIES/DATABASE.SQL`     |
 | Test sheets              | `TEST SERIES/FIRST SERIES/FIRST_SHEETS.SQL` |
-| **Employee Project**     | **`PROJECTS/Employee-Database/`** 🆕        |
-| **Project SQL files**    | **`PROJECTS/Employee-Database/*.SQL`** 🆕   |
-| **Project ideas**        | **`PROJECTS/PROJECT_IDEAS.md`** 🆕          |
+| **Chapter 7 Practice**   | **`PRACTICESHEET/CHAPTER-7/`** 🆕          |
+| **Chapter 7 Answers**    | **`ANSWERSHEETS/SHEET-7/`** 🆕             |
+| Employee Project         | `PROJECTS/Employee-Database/`               |
+| Project SQL files        | `PROJECTS/Employee-Database/*.SQL`          |
+| Project ideas            | `PROJECTS/PROJECT_IDEAS.md`                 |
 
 ---
 
@@ -774,22 +892,27 @@ Use the databases in the PROJECTS folder! They have realistic schemas and data f
 
 ```
 Created by: VISHAL KUSHWAHA
-Version: 3.3 (Updated with Projects Section)
-Status: 87% Complete (Chapters 1-6 + Projects)
+Version: 3.4 (Chapter 7 JOINs Complete!)
+Status: 90% Complete (Chapters 1-7 + Projects)
 Quality: Professional (9-9.5/10)
 Last Updated: August 2026
 
 Recent Updates:
-✅ Added Projects Section with Employee Database
-✅ Added practical query examples for real-world scenarios
-✅ Added Chapter 6: HAVING Clause (Expert Edition)
-✅ Added TEST SERIES with First Series assessment
+✅ Chapter 7: JOINs Complete (3 comprehensive guides)
+✅ INNER, LEFT, RIGHT, FULL OUTER JOINs mastered
+✅ Multi-table JOIN examples (3+ tables)
+✅ CTEs and window functions
+✅ Recursive CTEs for hierarchies
+✅ 40+ real-world JOIN examples
+✅ 15+ JOIN practice problems + 10+ challenges
+✅ Debugging JOINs guide
 ✅ 30+ total diagrams for visual learning
-✅ 30+ real-world business examples
-✅ 95+ practice exercises total
-✅ 70+ challenge problems
+✅ 40+ real-world business examples
+✅ 105+ practice exercises total
+✅ 80+ challenge problems
 ✅ 1 Active Project + 2 Planned
 ✅ 100+ sample database records
+✅ 5 resource files (3 for JOINs + 2+ others)
 ```
 
 ---
@@ -811,31 +934,37 @@ Phase 3: Aggregation ✅ (Complete)
   ├─ Chapter 5: GROUP BY
   ↓
 Phase 3B: Advanced Filtering ✅ (Complete)
-  ├─ Chapter 6: HAVING Clause [NEW!]
+  ├─ Chapter 6: HAVING Clause
+  ↓
+Phase 4: Multi-Table Queries 🆕 (70% Complete)
+  ├─ Chapter 7: JOINs ✅ (COMPLETE!)
+  │  ├─ SIMPLE_JOINS.md (Start here)
+  │  ├─ BASIC_JOINS.md (4 JOIN types)
+  │  └─ ADVANCED_JOINS.md (CTEs, window functions)
   ↓
 PROJECTS TRACK 🆕 (Active)
-  ├─ Employee Database ✅ (Setup Complete)
+  ├─ Employee Database ✅ (with multi-table JOINs)
   ├─ Write query solutions
   ├─ Build portfolio examples
   ↓
-TEST SERIES ⏳
-  ├─ First Series✅
-  └─ Second series ⏳(Coming)
+TEST SERIES ✅
+  ├─ First Series ✅
+  └─ Second series ⏳ (Coming)
   ↓
-Phase 4: Advanced Queries ⏳ (Coming)
-  ├─ Chapter 7: JOINs
-  ├─ Chapter 8: Subqueries
-  ├─ UNION
-  └─ Window Functions
+Phase 5: Advanced Queries ⏳ (Coming)
+  ├─ Chapter 8: Subqueries & CTEs
+  ├─ Chapter 9: Advanced JOINs
+  ├─ UNION and Set Operations
+  └─ Performance Optimization
   ↓
-SQL EXPERT! 🏆
+SQL MASTER! 🏆
 ```
 
 ---
 
-## 🎉 You're Already 87% There!
+## 🎉 You're Already 90% There!
 
-You've completed **6 out of 6-7 chapters + Active Project Work**. Every query you write, every mistake you fix, every concept you understand - it's building your SQL expertise.
+You've completed **7 out of 8 chapters + Active Project Work + Chapter 7 JOINs!** Every query you write, every JOIN you master, every mistake you fix - it's building your SQL expertise.
 
 **You now have:**
 
@@ -843,93 +972,98 @@ You've completed **6 out of 6-7 chapters + Active Project Work**. Every query yo
 - ✅ Advanced filtering and sorting
 - ✅ Data aggregation and grouping
 - ✅ Group filtering with HAVING
+- ✅ Multi-table queries with JOINs 🆕
+- ✅ CTEs and window functions 🆕
 - ✅ Real-world analysis templates
 - ✅ Understanding of complete query execution
-- ✅ 95+ solved practice problems
-- ✅ 🆕 Live database project for portfolio
+- ✅ 105+ solved practice problems
+- ✅ Live database project for portfolio
+- ✅ 40+ JOIN examples for interviews 🆕
 
 **You're ready for:**
 
+- Complex multi-table reports
 - Real business dashboards
-- Sales and revenue reporting
+- Sales and revenue reporting with JOINs
 - HR and team analytics
-- Product analysis
-- Customer insights
-- Complex filtered aggregate queries
-- 🆕 Job interviews with real examples
-- 🆕 GitHub portfolio pieces
+- Product and customer analysis
+- Finding data relationships
+- Identifying missing/orphan records
+- 🆕 Job interviews with advanced questions
+- 🆕 GitHub portfolio pieces showing JOINs
+- 🆕 Production SQL code
 
-**Next milestone:** Master JOINs to combine multiple tables (Phase 4)
+**Next milestone:** Advanced queries and optimization (Phase 5)
 
-**Keep practicing. Keep learning. You've got this! 💪**
+**Keep practicing. Keep learning. You've mastered JOINs! 💪**
 
 ---
 
-## 📚 Quick Reference: Chapter 6 Highlights
+## 📚 Quick Reference: Chapter 7 JOIN Types
 
-### WHERE vs HAVING Quick Comparison
+### The 4 JOINs Quick Summary
 
-| Aspect          | WHERE                     | HAVING           |
-| --------------- | ------------------------- | ---------------- |
-| **Filters**     | Rows                      | Groups           |
-| **Execution**   | Before GROUP BY           | After GROUP BY   |
-| **Aggregates**  | ❌ Not allowed            | ✅ Allowed       |
-| **Performance** | Faster (fewer rows)       | After grouping   |
-| **Use Case**    | Individual row conditions | Group conditions |
+| JOIN Type | What It Returns | When to Use |
+|-----------|-----------------|------------|
+| INNER JOIN | Only matching rows from both tables | Want perfect matches only |
+| LEFT JOIN | All from left + matches from right | Want all from left table |
+| RIGHT JOIN | All from right + matches from left | Want all from right (use LEFT instead) |
+| FULL OUTER JOIN | Everything from both tables | Want all data from both tables |
 
-### HAVING Syntax Template
+### JOIN Syntax Template
 
 ```sql
-SELECT column, AGGREGATE_FUNCTION(column)
-FROM table
-WHERE condition          -- Optional: filter rows first
-GROUP BY column
-HAVING aggregate_condition  -- Filter groups
+SELECT column1, column2
+FROM LeftTable
+[JOIN_TYPE] RightTable
+    ON LeftTable.ID = RightTable.ID
+WHERE [optional conditions]
 ORDER BY column;
 ```
 
-### Common HAVING Patterns
+### Common JOIN Patterns
 
 ```sql
--- Pattern 1: Count groups with more than N items
-SELECT category, COUNT(*) FROM table
-GROUP BY category HAVING COUNT(*) > 5;
+-- Pattern 1: INNER JOIN (perfect matches)
+SELECT e.Name, d.DepartmentName
+FROM Employees e
+INNER JOIN Departments d ON e.DepartmentID = d.DepartmentID;
 
--- Pattern 2: Average above threshold
-SELECT dept, AVG(salary) FROM employees
-GROUP BY dept HAVING AVG(salary) > 50000;
+-- Pattern 2: LEFT JOIN (all employees + departments)
+SELECT e.Name, d.DepartmentName
+FROM Employees e
+LEFT JOIN Departments d ON e.DepartmentID = d.DepartmentID;
 
--- Pattern 3: Sum with condition
-SELECT product, SUM(sales) FROM orders
-GROUP BY product HAVING SUM(sales) > 1000;
+-- Pattern 3: Multi-table JOIN (3+ tables)
+SELECT e.Name, d.DepartmentName, s.Amount
+FROM Employees e
+INNER JOIN Departments d ON e.DepartmentID = d.DepartmentID
+INNER JOIN Salaries s ON e.EmployeeID = s.EmployeeID;
 
--- Pattern 4: Multiple aggregates
-SELECT city, COUNT(*), SUM(amount) FROM customers
-WHERE age > 25 GROUP BY city
-HAVING COUNT(*) > 10 AND SUM(amount) > 5000;
+-- Pattern 4: Find unmatched data (LEFT JOIN + IS NULL)
+SELECT e.Name
+FROM Employees e
+LEFT JOIN Salaries s ON e.EmployeeID = s.EmployeeID
+WHERE s.EmployeeID IS NULL;  -- Employees with no salary
 
--- Pattern 5: Complete filter + group + having
-SELECT dept, COUNT(*) as count, AVG(salary) as avg_sal
-FROM employees WHERE status = 'active'
-GROUP BY dept HAVING COUNT(*) > 5 AND AVG(salary) > 40000
-ORDER BY avg_sal DESC;
-```
-
-### Key Execution Order
-
-```
-1. FROM     → Read table
-2. WHERE    → Filter rows ⚡ Do this first!
-3. GROUP BY → Create groups
-4. HAVING   → Filter groups
-5. SELECT   → Choose columns
-6. ORDER BY → Sort results
+-- Pattern 5: Complete analysis with JOINs + GROUP BY + HAVING
+SELECT
+    d.DepartmentName,
+    COUNT(e.EmployeeID) as emp_count,
+    AVG(s.Amount) as avg_salary,
+    SUM(s.Amount) as total_payroll
+FROM Departments d
+LEFT JOIN Employees e ON d.DepartmentID = e.DepartmentID
+LEFT JOIN Salaries s ON e.EmployeeID = s.EmployeeID
+GROUP BY d.DepartmentID, d.DepartmentName
+HAVING COUNT(e.EmployeeID) > 0
+ORDER BY total_payroll DESC;
 ```
 
 ---
 
-**Learning! 🚀**
+**Keep Learning! 🚀**
 
 _This course was created with passion for helping others master SQL._  
 _Use it wisely, practice consistently, and enjoy the learning journey!_  
-_Now with real database projects to build your portfolio! 💼_
+_Now with complete JOINs mastery to build advanced database skills! 💼_
