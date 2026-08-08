@@ -1,264 +1,391 @@
-
--- ## 🎯 Part 3:  HAVING Challenges (Challenges 1-12)
-
--- **Focus:** Complex real-world scenarios
-
---  Challenge 1: Business Dashboard - Departments Over Quota
-
--- Create a query showing departments where the average employee salary exceeds the company average salary.
-
--- **Difficulty:** ⭐⭐⭐  
--- **Hint:** You might need a subquery or two-step thinking process
-
--- **Requirements:**
--- - Show: dept_id, dept_name, employee_count, avg_salary, company_avg_salary
--- - Filter: departments where avg_salary > company average
--- - Order: by avg_salary DESC
-
--- **Write Your Query:**
  
 
---  Challenge 2: E-Commerce Analysis - Top Spending Customers
+-- 🧠 SQL HAVING Clause — Practice Questions
 
--- Find customers whose average order value is above the overall average order value AND have placed at least 5 orders.
-
--- **Difficulty:** ⭐⭐⭐  
-
--- **Requirements:**
--- - Show: customer_id, order_count, avg_order_value, overall_avg
--- - Filter: customers with above-average orders AND order_count >= 5
--- - Order: by avg_order_value DESC
-
--- **Write Your Query:**
--- ```sql
-
--- ```
+-- > A structured set of **15 SQL practice questions** to master the `HAVING` clause from **Basic → Advanced**.
 
 -- ---
 
---  Challenge 3: Restaurant Analytics - Peak Hours
+--   📌 Practice Dataset
 
--- Find hours of the day where:
--- - At least 10 orders were placed
--- - Average order amount exceeds $50
--- - Total sales for that hour exceeds $500
+-- Use the following `Employees` table for all questions.
 
--- **Difficulty:** ⭐⭐⭐⭐  
+--   `Employees`
 
--- **Requirements:**
--- - Show: hour_of_day, order_count, avg_order_amount, total_sales
--- - Extract hour from order_date
--- - Order: by hour_of_day
-
--- **Write Your Query:**
--- ```sql
-
--- ```
-
--- ---
-
---  Challenge 4: Product Performance - Best Sellers
-
--- Find products where:
--- - They've been ordered at least 20 times
--- - Average rating is 4.0 or higher
--- - Total revenue from that product exceeds $5,000
-
--- **Difficulty:** ⭐⭐⭐⭐  
-
--- **Requires:** products, order_items, reviews tables (or similar)
-
--- **Requirements:**
--- - Show: product_id, product_name, order_count, avg_rating, total_revenue
--- - Multiple HAVING conditions
--- - Order: by total_revenue DESC
-
--- **Write Your Query:**
--- ```sql
-
--- ```
+-- | employee_id | employee_name | department | salary | city   | experience | status   |
+-- | ----------: | ------------- | ---------- | -----: | ------ | ---------: | -------- |
+-- |         101 | Amit          | IT         |  60000 | Delhi  |          3 | Active   |
+-- |         102 | Rahul         | IT         |  75000 | Delhi  |          5 | Active   |
+-- |         103 | Priya         | HR         |  50000 | Mumbai |          2 | Active   |
+-- |         104 | Sneha         | HR         |  55000 | Mumbai |          4 | Active   |
+-- |         105 | Rohan         | Finance    |  80000 | Delhi  |          6 | Active   |
+-- |         106 | Neha          | Finance    |  70000 | Pune   |          4 | Active   |
+-- |         107 | Karan         | IT         |  90000 | Pune   |          7 | Active   |
+-- |         108 | Anjali        | Sales      |  45000 | Delhi  |          1 | Inactive |
+-- |         109 | Vikash        | Sales      |  55000 | Delhi  |          3 | Active   |
+-- |         110 | Pooja         | Sales      |  65000 | Mumbai |          5 | Active   |
+-- |         111 | Arjun         | Marketing  |  60000 | Pune   |          3 | Active   |
+-- |         112 | Simran        | Marketing  |  70000 | Pune   |          5 | Active   |
+-- |         113 | Varun         | IT         |  65000 | Mumbai |          4 | Active   |
+-- |         114 | Nisha         | Finance    |  90000 | Delhi  |          8 | Active   |
+-- |         115 | Mohit         | HR         |  60000 | Delhi  |          6 | Inactive |
 
 -- ---
 
---  Challenge 5: HR Reporting - Retention Analysis
+--   🎯 HAVING Practice Questions
+
+--   🟢 Level 1 — Basic
+
+--   Question 1 — Departments with Multiple Employees
+
+-- Find all departments that have **more than 2 employees**.
+
+-- **Display:**
+
+-- * Department
+-- * Employee count
+
+-- **Difficulty:** ⭐
+
+SELECT department ,COUNT(employee_id)
+FROM employees
+GROUP BY department
+HAVING COUNT(employee_id) > 2;
+
+
+--   Question 2 — Departments with High Average Salary
+
+-- Find departments where the **average salary is greater than ₹60,000**.
+
+-- **Display:**
+
+-- * Department
+-- * Average salary
+
+-- **Difficulty:** ⭐
+
+SELECT Department , AVG(salary) AS Average_Salary
+FROM Employess
+GROUP BY Department
+HAVING AVG(salary)>60000;
+
+
+--   Question 3 — Departments with High Total Salary
+
+-- Find departments where the **total salary is greater than ₹150,000**.
+
+-- **Display:**
+
+-- * Department
+-- * Total salary
+
+-- **Difficulty:** ⭐
+
+SELECT Department , SUM(salary) AS Total_Salary
+FROM employees
+GROUP BY Department
+HAVING SUM(salary)>150000;
+
+
+
+
+-- APPLY FROM there THESE DATA >>ORDERS.SQL 👇
+
+
+
+--  Question 4 — Departments with High Maximum Salary
+
+-- Find departments where the **maximum salary is greater than ₹80,000**.
+
+-- **Display:**
+
+-- * Department
+-- * Maximum salary
+
+--  **Difficulty:** ⭐⭐
+
+SELECT department , MAX(salary) AS maximum_salary
+FROM Staff_Performances
+GROUP BY department
+HAVING  MAX(salary)>80000;
+
+
+--  Question 5 — Departments with High Minimum Salary
+
+-- Find departments where the **minimum salary is greater than ₹50,000**.
+
+-- **Display:**
+
+-- * Department
+-- * Minimum salary
+
+-- **Difficulty:** ⭐⭐
+
+SELECT department , MIN(salary) AS minimum_salary
+FROM Staff_Performances
+GROUP BY department
+HAVING  MIN(salary)<50000;
+
+
+
+
+
+--  🟡 Level 2 — Intermediate
+
+
+
+--  Question 6 — Active Employees by Department
+
+-- Consider only employees whose status is **`Active`**.
+
+-- Find departments that have **more than 2 active employees**.
+
+-- **Display:**
+
+-- * Department
+-- * Active employee count
+
+-- **Difficulty:** ⭐⭐
+
+SELECT department , COUNT(status) AS Active_Employee_Count
+FROM Staff_Performances
+WHERE status ='Active'
+GROUP BY department
+HAVING COUNT(status) > 2;
+
+
+
+
+---Question 7 — Departments with High Average Experience
+
+-- Find departments where the **average employee experience is greater than 4 years**.
+
+-- **Display:**
+
+-- * Department
+-- * Average experience
+
+-- **Difficulty:** ⭐⭐
+
+SELECT department , AVG(experience) AS Average_Experience
+FROM Staff_Performances
+GROUP BY department
+HAVING AVG(experience)>4;
+
+
+
+--  Question 8 — Cities with Multiple Employees
+
+-- Find cities that have **at least 3 employees**.
+
+-- **Display:**
+
+-- * City
+-- * Employee count
+
+-- **Difficulty:** ⭐⭐
+
+SELECT  city , COUNT(staff_id) AS staff_numbers
+FROM Staff_Performances
+GROUP BY city 
+HAVING COUNT(staff_id) >= 3;
+
+--  Question 9 — Departments with a Large Salary Range
+
+-- Find departments where the difference between the **highest salary and lowest salary is greater than ₹20,000**.
+
+-- **Display:**
+
+-- * Department
+-- * Maximum salary
+-- * Minimum salary
+-- * Salary range
+
+-- **Difficulty:** ⭐⭐⭐
+
+SELECT department , 
+MAX(salary) AS Maximum_Salary, 
+MIN(salary) AS Minimum_Salary , 
+(MAX(salary) - MIN(salary) ) AS Salary_range 
+FROM  Staff_Performances
+GROUP BY department
+HAVING (MAX(salary) - MIN(salary) )  > 20000;
+
+
+--  Question 10 — Departments with High Average Salary and Multiple Employees
+
+-- Find departments that satisfy **both conditions**:
+
+-- * Have at least **3 employees**
+-- * Average salary is greater than **₹60,000**
+
+-- **Display:**
+
+-- * Department
+-- * Employee count
+-- * Average salary
+
+-- **Difficulty:** ⭐⭐⭐
+
+SELECT department, AVG(salary) AS Average_Salary , COUNT(staff_id) AS staff_numbers
+ FROM Staff_Performances
+GROUP BY department
+HAVING COUNT(staff_id)>=3 AND  AVG(salary) >60000;
+
+
+
+
+
+--  🔴 Level 3 — Advanced
+
+--  Question 11 — Salary and Experience Analysis
+
+-- Find departments where **all** of the following conditions are true:
+
+-- * Average salary is greater than ₹60,000
+-- * Average experience is greater than 4 years
+-- * At least 2 employees belong to the department
+
+-- **Display:**
+
+-- * Department
+-- * Employee count
+-- * Average salary
+-- * Average experience
+
+-- **Difficulty:** ⭐⭐⭐
+
+SELECT department ,
+       AVG(salary) AS Average_Salary ,
+      AVG(experience)AS Average_Experience,
+      COUNT(staff_id) AS staff_numbers
+ FROM Staff_Performances
+GROUP BY department
+HAVING AVG(salary) > 60000 
+       AND AVG(experience) > 4
+       AND COUNT(staff_id) >=2;
+    
+
+
+
+--  Question 12 — High-Paying Cities
+
+-- Find cities where **all** of the following conditions are true:
+
+-- * More than 2 employees work there
+-- * Maximum salary is greater than ₹80,000
+-- * Average salary is greater than ₹60,000
+
+-- **Display:**
+
+-- * City
+-- * Employee count
+-- * Maximum salary
+-- * Average salary
+
+-- **Difficulty:** ⭐⭐⭐⭐
+
+SELECT city,
+COUNT(staff_id) AS staff_numbers,
+ MAX(salary) AS Maximum_Salary, 
+AVG(salary) AS Average_Salary
+FROM Staff_Performances 
+GROUP BY city
+HAVING 
+     COUNT(staff_id) >2
+    AND MAX(salary) >80000
+    AND AVG(salary) > 60000;
+
+
+
+--  Question 13 — Department Salary Concentration
 
 -- Find departments where:
--- - Employees hired before 2023 represent at least 60% of the department
--- - Department has at least 10 employees
--- - Average salary is above $50,000
 
--- **Difficulty:** ⭐⭐⭐⭐⭐  
+-- * Total salary is greater than ₹200,000
+-- * Average salary is greater than ₹65,000
 
--- **Requires:** Calculation of percentage in HAVING
+-- **Display:**
 
--- **Requirements:**
--- - Show: dept_id, total_employees, senior_employees, pct_senior, avg_salary
--- - Order: by pct_senior DESC
+-- * Department
+-- * Total salary
+-- * Average salary
 
--- **Write Your Query:**
--- ```sql
+-- **Difficulty:** ⭐⭐⭐⭐
 
--- ```
+SELECT department,
+SUM(salary) AS Total_Salary,
+AVG(salary)AS Average_Salary
+FROM Staff_Performances
+GROUP BY department
+HAVING SUM(salary)>200000 and 
+       AVG(salary)> 65000;
 
--- ---
 
---  Challenge 6: Marketing Analysis - High-Value Customer Segments
 
--- Segment customers by region, finding regions where:
--- - At least 25 customers exist
--- - Average customer lifetime value exceeds $10,000
--- - At least 3 customers have spent over $50,000 individually
 
--- **Difficulty:** ⭐⭐⭐⭐⭐  
+--  Question 14 — Departments Above Company Average ⭐
 
--- **Requires:** Advanced HAVING logic
+-- Find departments where the **average department salary is greater than the overall average salary of the entire company**.
 
--- **Write Your Query:**
--- ```sql
+-- **Display:**
 
--- ```
+-- * Department
+-- * Department average salary
 
--- ---
+--  Requirements
 
---  Challenge 7: Inventory Management - Slow-Moving Stock Alert
+-- You must compare:
+-- Department Average Salary
+-- Overall Company Average Salary
 
--- Find products in each category where:
--- - The product is in a category with at least 5 items
--- - Average sale quantity for the product is below 10 units
--- - Category's average sale quantity is above 15 units (so this product is an outlier)
+-- 💡 **Hint:** You may need to use a **subquery**.
 
--- **Difficulty:** ⭐⭐⭐⭐  
+-- **Difficulty:** ⭐⭐⭐⭐⭐
 
--- **Write Your Query:**
--- ```sql
+ 
 
--- ```
 
--- ---
 
---  Challenge 8: Quality Control - Supplier Analysis
 
--- Find suppliers where:
--- - They supply at least 10 products
--- - Average product quality score (from products table) is below 3.5
--- - Total products supplied have generated less than $100,000 in revenue
 
--- **Difficulty:** ⭐⭐⭐⭐  
 
--- **Write Your Query:**
--- ```sql
+--   🏆 Level 4 — Expert Challenge
 
--- ```
+--   Question 15 — Complete Department Performance Analysis
 
--- ---
+-- Find departments that satisfy **ALL** of the following conditions:
 
---   Challenge 9: Time-Series Analysis - Seasonal Patterns
+-- 1. Have at least **2 active employees**
+-- 2. Average salary is greater than **₹60,000**
+-- 3. Maximum salary is greater than **₹80,000**
+-- 4. Minimum salary is greater than **₹50,000**
+-- 5. Average experience is greater than **4 years**
 
--- Find months across all years where:
--- - Total sales exceeded the annual average
--- - At least 100 orders were placed
--- - Average order size was above $75
+-- **Display:**
 
--- **Difficulty:** ⭐⭐⭐⭐⭐  
+-- * Department
+-- * Active employee count
+-- * Average salary
+-- * Maximum salary
+-- * Minimum salary
+-- * Average experience
 
--- **Requires:** Date manipulation and multiple aggregates
+-- **Difficulty:** ⭐⭐⭐⭐⭐
 
--- **Write Your Query:**
--- ```sql
 
--- ```
-
--- ---
-
---   Challenge 10: Multi-Criteria Filtering - Complex Business Logic
-
--- Find customer segments (by region) where:
--- - Average purchase frequency is at least once per 2 months
--- - Average order value is above $100
--- - Total lifetime revenue per customer exceeds $5,000
--- - At least 10 customers in the segment
-
--- **Difficulty:** ⭐⭐⭐⭐⭐  
-
--- **Write Your Query:**
--- ```sql
-
--- ```
-
--- ---
-
---   Challenge 11: Anomaly Detection - Performance Outliers
-
--- Find sales representatives where:
--- - They've made at least 50 sales
--- - Their average deal size is more than 20% above the company average
--- - Standard deviation of their deal sizes is below $5,000 (consistency)
-
--- **Difficulty:** ⭐⭐⭐⭐⭐  
--- **Note:** Requires STDDEV or similar function
-
--- **Write Your Query:**
--- ```sql
-
--- ```
-
--- ---
-
---   Challenge 12: Complex Business Scenario - Loyalty Program Eligibility
-
--- Identify customers eligible for premium loyalty program:
--- - At least 20 orders in the past year
--- - Average order value above $75 in the past year
--- - Has not returned more than 10% of their orders
--- - Not been inactive for more than 90 days (recent order exists)
-
--- **Difficulty:** ⭐⭐⭐⭐⭐  
-
--- **Requirements:**
--- - Show: customer_id, order_count, avg_order_value, return_rate, days_since_order
--- - Multiple WHERE and HAVING conditions
--- - Order: by order_count DESC
-
--- **Write Your Query:**
--- ```sql
-
--- ```
-
--- ---
-
---   📊 Self-Assessment
-
--- Check your understanding:
-
--- **Beginner Level** (Exercises 1-5)
--- - [ ] I can write simple HAVING clauses
--- - [ ] I understand COUNT with HAVING
--- - [ ] I can use SUM with HAVING
--- - [ ] I can use AVG with HAVING
--- - [ ] I know HAVING filters groups, not rows
-
--- **Intermediate Level** (Exercises 6-10)
--- - [ ] I can combine WHERE and HAVING
--- - [ ] I can use multiple HAVING conditions
--- - [ ] I can use MIN and MAX with HAVING
--- - [ ] I can debug HAVING errors
--- - [ ] I understand performance implications
-
--- **Advanced Level** (Challenges 1-12)
--- - [ ] I can write complex real-world queries
--- - [ ] I can handle complex filtering scenarios
--- - [ ] I can calculate percentages in HAVING
--- - [ ] I can work with multiple tables
--- - [ ] I can optimize queries for performance
-
--- ---
-
---   💡 Hints for Success
-
--- - **Beginner Exercises:** Focus on one aggregate at a time
--- - **Intermediate Exercises:** Think WHERE (rows) then HAVING (groups)
--- - **Advanced Challenges:** Write the query step-by-step
---   1. First, write GROUP BY
---   2. Then add WHERE conditions
---   3. Finally, add HAVING conditions
---   4. Test incrementally
+SELECT department ,
+ COUNT(*) AS staff_employees_count,
+AVG(salary) AS Average_Salary,
+MAX(salary)AS maximum_salary,
+MIN(salary)AS Minimum_Salary,
+AVG(experience) AS Average_Experience
+FROM Staff_Performances
+WHERE status='Active'
+GROUP BY department
+HAVING 
+COUNT(*) >=2 
+AND AVG(salary) >60000
+AND MAX(salary)>80000
+AND MIN(salary)>50000
+AND AVG(experience)>4;

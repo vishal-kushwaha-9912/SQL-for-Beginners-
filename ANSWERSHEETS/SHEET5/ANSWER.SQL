@@ -122,11 +122,11 @@ ORDER BY SUM(salary) DESC;
 -- - Total salary of the department
 -- - The average salary *specifically for employees earning more than 45,000*.
 -- **Write your query:**
--- ```sql
--- [Your answer here]
--- ```
 
--- ---
+
+
+
+
 
 -- ### Problem 12: Customer Spending Analysis
 -- **Task:** Show total orders, total amount spent, and average order value for each customer. 
