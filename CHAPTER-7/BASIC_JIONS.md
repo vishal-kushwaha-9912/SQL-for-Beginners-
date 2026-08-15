@@ -1,4 +1,5 @@
 # 🎓 SQL JOINs for Beginners - The Easiest Way to Learn
+
 **A Step-by-Step Guide That Actually Makes Sense**
 
 ---
@@ -23,11 +24,13 @@
 Before learning JOINs, make sure you understand:
 
 ✅ **Basic SELECT** - Getting data from one table
+
 ```sql
 SELECT Name, Salary FROM Employees;
 ```
 
 ✅ **WHERE clause** - Filtering data
+
 ```sql
 SELECT Name FROM Employees WHERE Salary > 50000;
 ```
@@ -47,6 +50,7 @@ If you know these, you're ready! If not, review them first—JOINs build on thes
 You have two pieces of information:
 
 **Table 1: Students**
+
 ```
 StudentID | Name    | ClassID
 ----------|---------|----------
@@ -56,6 +60,7 @@ StudentID | Name    | ClassID
 ```
 
 **Table 2: Classes**
+
 ```
 ClassID | ClassName  | Teacher
 --------|------------|----------
@@ -70,6 +75,7 @@ ClassID | ClassName  | Teacher
 **With JOIN (Perfect):** You connect the two tables using ClassID and get complete information.
 
 **Result:**
+
 ```
 StudentID | Name    | ClassName | Teacher
 ----------|---------|-----------|----------
@@ -96,16 +102,16 @@ Think of it like finding people who are in BOTH a soccer team AND a math club. I
 
 ```
 Students (Left)    Classes (Right)
-┌────────────┐     ┌────────────┐
-│ Alice (10) │──┐  │ Math (10)  │
+┌────────────┐    ┌─────────────┐
+│ Alice (10) │──┐ │ Math (10)   │
 │ Bob   (10) │  └─┼──┤          │
 │ Charlie(11)│    │  └────┐     │
 │ Diana (12) │    │   Sci │     │
 └────────────┘    │   (11)│     │
                   │       │     │
-                  │ English(12)│
-                  │           │
-                  └────────────┘
+                  │ English(12) │
+                  │             │
+                  └─────────────┘
 
 INNER JOIN Shows: Alice, Bob, Charlie
 (Only those with matching ClassID)
@@ -116,7 +122,7 @@ Skips: Diana (no English class in our Classes table)
 ### The Code (Simple Version)
 
 ```sql
-SELECT 
+SELECT
     Students.Name,
     Classes.ClassName
 FROM Students
@@ -124,6 +130,7 @@ INNER JOIN Classes ON Students.ClassID = Classes.ClassID;
 ```
 
 **Breaking This Down:**
+
 - `SELECT Students.Name, Classes.ClassName` = Pick these columns
 - `FROM Students` = Start with this table (left table)
 - `INNER JOIN Classes` = Connect to this table (right table)
@@ -178,7 +185,7 @@ Diana | English
 ### The Code
 
 ```sql
-SELECT 
+SELECT
     Students.Name,
     Classes.ClassName
 FROM Students
@@ -209,7 +216,7 @@ LEFT JOIN = Show me ALL rows from left table + matching rows from right
 **Example:** "Show me all employees and their salaries (if we have salary info)"
 
 ```sql
-SELECT 
+SELECT
     Employees.Name,
     Salaries.Amount
 FROM Employees
@@ -231,7 +238,7 @@ It's like LEFT JOIN but flipped!
 ### The Code
 
 ```sql
-SELECT 
+SELECT
     Students.Name,
     Classes.ClassName
 FROM Students
@@ -256,11 +263,13 @@ Charlie | Science
 Honestly? **Almost never.** You can always rewrite it as a LEFT JOIN:
 
 **Instead of:**
+
 ```sql
 FROM Students RIGHT JOIN Classes
 ```
 
 **Write:**
+
 ```sql
 FROM Classes LEFT JOIN Students  ← Just flip the tables!
 ```
@@ -291,7 +300,7 @@ Students (Left)    Classes (Right)
                 └──┤ PE (99)    │
                    └────────────┘
 
-FULL OUTER JOIN Shows: 
+FULL OUTER JOIN Shows:
 - Alice ↔ Math ✓
 - Bob ↔ Math ✓
 - Charlie ↔ Science ✓
@@ -302,7 +311,7 @@ FULL OUTER JOIN Shows:
 ### The Code
 
 ```sql
-SELECT 
+SELECT
     Students.Name,
     Classes.ClassName
 FROM Students
@@ -352,6 +361,7 @@ FULL OUTER:     ✓ Alice  ✓ Bob  ✓ Charlie  ✓ Diana  ✓ PE
 ## Mistake #1: Wrong Column Names
 
 ### ❌ WRONG
+
 ```sql
 SELECT Students.Name, Classes.ClassName
 FROM Students
@@ -360,6 +370,7 @@ INNER JOIN Classes ON StudentID = ClassID;
 ```
 
 ### ✅ CORRECT
+
 ```sql
 SELECT Students.Name, Classes.ClassName
 FROM Students
@@ -374,15 +385,17 @@ INNER JOIN Classes ON Students.ClassID = Classes.ClassID;
 ## Mistake #2: Using WHERE Instead of ON
 
 ### ❌ WRONG (Confusing)
+
 ```sql
 SELECT Students.Name, Classes.ClassName
 FROM Students
-LEFT JOIN Classes 
+LEFT JOIN Classes
 WHERE Students.ClassID = Classes.ClassID;
 -- This REMOVES unmatched rows - defeats LEFT JOIN purpose!
 ```
 
 ### ✅ CORRECT
+
 ```sql
 SELECT Students.Name, Classes.ClassName
 FROM Students
@@ -397,6 +410,7 @@ LEFT JOIN Classes ON Students.ClassID = Classes.ClassID;
 ## Mistake #3: Forgetting the Join Condition
 
 ### ❌ WRONG
+
 ```sql
 SELECT Students.Name, Classes.ClassName
 FROM Students
@@ -406,6 +420,7 @@ INNER JOIN Classes;
 ```
 
 ### ✅ CORRECT
+
 ```sql
 SELECT Students.Name, Classes.ClassName
 FROM Students
@@ -422,11 +437,13 @@ INNER JOIN Classes ON Students.ClassID = Classes.ClassID;
 ## Example 1: Your First JOIN (Super Easy)
 
 ### The Problem
+
 "I want to see each student's name and their class name"
 
 ### The Tables You Have
 
 **Table: Students**
+
 ```
 StudentID | Name
 ----------|-------
@@ -436,6 +453,7 @@ StudentID | Name
 ```
 
 **Table: Classes**
+
 ```
 ClassID | ClassName
 --------|----------
@@ -448,7 +466,7 @@ ClassID | ClassName
 ### The Solution (INNER JOIN)
 
 ```sql
-SELECT 
+SELECT
     Students.Name,
     Classes.ClassName
 FROM Students
@@ -457,11 +475,13 @@ INNER JOIN Classes
 ```
 
 **Step-by-step breakdown:**
+
 1. Start with Students table
 2. Find the ClassName by matching ClassID
 3. Show Name + ClassName together
 
 ### The Result
+
 ```
 Name    | ClassName
 --------|----------
@@ -475,11 +495,13 @@ Charlie | Science
 ## Example 2: Finding Unmatched Data (LEFT JOIN)
 
 ### The Problem
+
 "Show me all students, even if we don't have their class info"
 
 ### The Tables
 
 **Table: Students**
+
 ```
 StudentID | Name      | ClassID
 -----------|-----------|--------
@@ -490,6 +512,7 @@ StudentID | Name      | ClassID
 ```
 
 **Table: Classes**
+
 ```
 ClassID | ClassName
 --------|----------
@@ -500,7 +523,7 @@ ClassID | ClassName
 ### The Solution (LEFT JOIN)
 
 ```sql
-SELECT 
+SELECT
     Students.Name,
     Classes.ClassName
 FROM Students
@@ -509,6 +532,7 @@ LEFT JOIN Classes
 ```
 
 ### The Result
+
 ```
 Name    | ClassName
 --------|----------
@@ -525,11 +549,13 @@ Diana   | (empty)    ← No matching class, but Diana still shows!
 ## Example 3: Multiple Joins (Connecting 3 Tables)
 
 ### The Problem
+
 "Show me students, their class name, AND their teacher"
 
 ### The Tables
 
 **Table: Students**
+
 ```
 StudentID | Name    | ClassID
 ----------|---------|--------
@@ -539,6 +565,7 @@ StudentID | Name    | ClassID
 ```
 
 **Table: Classes**
+
 ```
 ClassID | ClassName
 --------|----------
@@ -547,6 +574,7 @@ ClassID | ClassName
 ```
 
 **Table: Teachers**
+
 ```
 TeacherID | TeacherName | ClassID
 ----------|-------------|--------
@@ -557,23 +585,25 @@ TeacherID | TeacherName | ClassID
 ### The Solution (TWO JOINs)
 
 ```sql
-SELECT 
+SELECT
     Students.Name,
     Classes.ClassName,
     Teachers.TeacherName
 FROM Students
-INNER JOIN Classes 
+INNER JOIN Classes
     ON Students.ClassID = Classes.ClassID
-INNER JOIN Teachers 
+INNER JOIN Teachers
     ON Classes.ClassID = Teachers.ClassID;
 ```
 
 **How it works:**
+
 1. Start with Students
 2. Find their class name (first JOIN)
 3. Find their teacher (second JOIN)
 
 ### The Result
+
 ```
 Name    | ClassName | TeacherName
 --------|-----------|----------
@@ -589,6 +619,7 @@ Charlie | Science   | Ms. Johnson
 ### The Tables
 
 **Table: Employees**
+
 ```
 EmployeeID | Name  | DepartmentID
 -----------|-------|----------
@@ -598,6 +629,7 @@ EmployeeID | Name  | DepartmentID
 ```
 
 **Table: Salaries**
+
 ```
 SalaryID | EmployeeID | Amount
 ---------|------------|-------
@@ -609,15 +641,16 @@ SalaryID | EmployeeID | Amount
 ### Problem 1: Show each employee with their salary
 
 ```sql
-SELECT 
+SELECT
     Employees.Name,
     Salaries.Amount
 FROM Employees
-INNER JOIN Salaries 
+INNER JOIN Salaries
     ON Employees.EmployeeID = Salaries.EmployeeID;
 ```
 
 **Result:**
+
 ```
 Name  | Amount
 ------|-------
@@ -631,15 +664,16 @@ Alice | 78000  ← Alice appears twice because she has 2 salary records!
 ### Problem 2: Show employees EVEN IF they don't have salary info
 
 ```sql
-SELECT 
+SELECT
     Employees.Name,
     Salaries.Amount
 FROM Employees
-LEFT JOIN Salaries 
+LEFT JOIN Salaries
     ON Employees.EmployeeID = Salaries.EmployeeID;
 ```
 
 **Result:**
+
 ```
 Name | Amount
 -----|-------
@@ -665,8 +699,8 @@ Think of it as organizing complex queries into steps.
 
 ```sql
 -- Without CTE (Hard to read)
-SELECT EmployeeID, Name, Amount 
-FROM Employees 
+SELECT EmployeeID, Name, Amount
+FROM Employees
 INNER JOIN Salaries ON Employees.ID = Salaries.EmployeeID
 WHERE Amount > (
     SELECT AVG(Amount) FROM Salaries
@@ -697,6 +731,7 @@ SELECT * FROM HighEarners;
 ```
 
 **Think of it as:**
+
 - Step 1: Create a mini-table called HighEarners
 - Step 2: Select from that mini-table
 
@@ -723,7 +758,7 @@ GROUP BY Department;
 
 ```sql
 -- This KEEPS individual details + adds comparisons!
-SELECT 
+SELECT
     Name,
     Salary,
     Department,
@@ -733,6 +768,7 @@ FROM Employees;
 ```
 
 **Result:**
+
 ```
 Name   | Salary | Department | AvgSalaryInDept | DifferenceFromAvg
 -------|--------|------------|-----------------|------------------
@@ -748,7 +784,7 @@ Charlie| 65000  | IT         | 70000           | -5000
 Ranks each row:
 
 ```sql
-SELECT 
+SELECT
     Name,
     Salary,
     ROW_NUMBER() OVER (ORDER BY Salary DESC) as Rank
@@ -756,6 +792,7 @@ FROM Employees;
 ```
 
 **Result:**
+
 ```
 Name   | Salary | Rank
 -------|--------|-----
@@ -775,6 +812,7 @@ A recursive query finds **relationships within a table** (like finding a manager
 ### Real-World Example: Organizational Chart
 
 **Table: Employees**
+
 ```
 EmployeeID | Name    | ManagerID
 -----------|---------|----------
@@ -793,7 +831,7 @@ EmployeeID | Name    | ManagerID
 ```sql
 WITH RECURSIVE OrgChart AS (
     -- STEP 1: Start with Diana
-    SELECT 
+    SELECT
         EmployeeID,
         Name,
         ManagerID,
@@ -804,7 +842,7 @@ WITH RECURSIVE OrgChart AS (
     UNION ALL
 
     -- STEP 2: Keep going up until we find the CEO
-    SELECT 
+    SELECT
         e.EmployeeID,
         e.Name,
         e.ManagerID,
@@ -816,6 +854,7 @@ SELECT * FROM OrgChart;
 ```
 
 **Result:**
+
 ```
 EmployeeID | Name    | ManagerID | Level
 -----------|---------|-----------|-----
@@ -825,6 +864,7 @@ EmployeeID | Name    | ManagerID | Level
 ```
 
 **How it works:**
+
 1. Start with Diana (Level 1)
 2. Find her manager Bob (Level 2)
 3. Find Bob's manager Alice (Level 3)
@@ -883,17 +923,21 @@ FROM Students INNER JOIN Classes ON Students.ClassID = Classes.ClassID
 ## Database-Specific Notes
 
 ### PostgreSQL
+
 - Supports all JOINs ✓
 - Great for learning
 
 ### MySQL
+
 - Doesn't support FULL OUTER JOIN (use UNION instead)
 - Otherwise supports all main JOINs
 
 ### SQL Server
+
 - Supports all JOINs ✓
 
 ### SQLite
+
 - Supports all JOINs (version 3.39+) ✓
 
 ---
@@ -931,6 +975,7 @@ Diana          | (NULL)            ← No matching class
 **This is expected behavior for OUTER JOINs!**
 
 **If you want to hide NULLs:**
+
 ```sql
 WHERE Classes.ClassName IS NOT NULL
 ```
@@ -947,7 +992,7 @@ SELECT ID, Name FROM Employees
 INNER JOIN Salaries ON EmployeeID = ID
 
 -- ✅ Fix: Specify the table
-SELECT Employees.ID, Employees.Name 
+SELECT Employees.ID, Employees.Name
 FROM Employees
 INNER JOIN Salaries ON Employees.EmployeeID = Salaries.EmployeeID
 ```
@@ -964,4 +1009,3 @@ INNER JOIN Salaries ON Employees.EmployeeID = Salaries.EmployeeID
 6. **Advance:** Learn about CTEs and Window Functions
 
 ---
-
