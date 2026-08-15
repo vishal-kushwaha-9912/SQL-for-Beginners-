@@ -166,12 +166,12 @@ If a student has no matching class, show them anyway with empty/NULL values.
 
 ```
 Students (Left)    Classes (Right)
-┌────────────┐     ┌────────────┐
-│ Alice (10) │──┐  │ Math (10)  │
-│ Bob   (10) │  └─┼──┤          │
-│ Charlie(11)│    │  └────┐     │
-│ Diana (12) │    │   Sci(11)   │
-└────────────┘    │           │
+┌────────────┐    ┌────────────┐
+│ Alice (10) │──┐ │ Math (10)  │
+│ Bob   (10) │  └─┼──┤         │
+│ Charlie(11)│    │  └────┐    │
+│ Diana (12) │    │   Sci(11)  │
+└────────────┘    │            │
                   │ English(12)│
                   └────────────┘
 
