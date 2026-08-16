@@ -1,0 +1,23 @@
+
+-- HARD LEVEL QUESTIONS:
+-- Teaching Focus: Complex JOINs, CROSS JOIN, Handling JOIN duplicates, Performance awareness
+--
+-- Q9. (Complex Multi-Table JOIN) Find all films that have been screened at multiple festivals.
+--     Show: film title, all festivals where it screened, venue names, and screening dates.
+--     Hint: You'll need to JOIN through screening_venues to get festival information.
+--
+-- Q10. (CROSS JOIN + Filtering) Create a theoretical pairing of every filmmaker with every festival.
+--      Then filter to show only those pairings where that filmmaker's film was actually screened 
+--      at that festival. This identifies "presence" opportunities.
+--
+-- Q11. (Handling JOIN Duplicates) Show all films with their crew members and the festivals where 
+--      they're being screened. Some films may have multiple crew members and multiple screenings.
+--      Count how many rows you get and explain why duplicates occur. How would you deduplicate?
+--
+-- Q12. (Advanced Multi-Table Join) For each filmmaker, show:
+--      - Filmmaker name and country
+--      - Number of films they worked on
+--      - Total number of screening venues those films appeared in
+--      - List of all festivals where their films screened (avoid duplicates)
+--      - Total screenings across all their films
+--      This requires JOINing 5-6 tables. Think about the JOIN order and GROUP BY complexity.

@@ -3,10 +3,12 @@
 --
 -- Q1. (INNER JOIN) Show username and achievement name for gamers who have unlocked achievements.
 --     What happens to gamers with NO achievements in this query?
--- SELECT gm.gamer_id ,gm.username ,pa.achievement_name
--- FROM player_achievements AS pa
--- INNER JOIN gamers AS gm
---     ON gm.gamer_id = pa.gamer_id;
+
+
+SELECT gm.gamer_id ,gm.username ,pa.achievement_name
+FROM player_achievements AS pa
+INNER JOIN gamers AS gm
+    ON gm.gamer_id = pa.gamer_id;
 
 -- for all the data at onces
 
@@ -35,9 +37,6 @@ FROM player_achievements AS PA
     ON G.game_id = PA.game_id;
 
 
-
-
---
 -- Q4. (FULL OUTER JOIN) Show all gamers and all games with their achievement connections.
 --     How many rows have NULL in gamer_id or game_id columns?
 SELECT *
